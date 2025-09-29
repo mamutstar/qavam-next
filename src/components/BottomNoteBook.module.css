@@ -1,0 +1,51 @@
+@media (max-width: 768px) {
+.bottomNoteBookContainer{
+    position: fixed;   /* ثابت بشه */
+  bottom: 0;         /* بچسبه پایین صفحه */
+  left: 0;           
+  width: 100%;       /* عرض کل صفحه */
+  height: 40px;
+  background: white; /* یا هر رنگ دیگه */
+  padding: 1rem;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1); /* سایه از بالا */
+  z-index: 1000;     /* بالاتر از بقیه عناصر */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.39);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+}
+.noteBookButton{
+    position: relative;   /* تا بتونیم badge رو داخلش position کنیم */
+    background-color: #F8F9FA;
+    border: none;
+    border-radius: 8px;
+    width: 60px;
+    aspect-ratio: 1/1;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 15px -6px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    margin-right: 15px;
+
+    img{
+        
+        width: 40px;
+    }
+}
+.badge{
+        position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #fcbe55;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 4px 6px;
+  min-width: 10px;
+  min-height: 10px;
+  text-align: center;
+    }
+
+}

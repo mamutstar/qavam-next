@@ -1,0 +1,27 @@
+@media (max-width: 768px) {
+    .bodyy{
+        background-color: #F5F6F8 ;
+        
+        max-width: 100vw;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        
+    }
+
+    .qavamHeaderImg{
+        
+        width: 95vw;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        
+        
+    }
+    .menuCategoryButtonsContainer{
+        display: flex;
+        
+    }
+    
+    
+}
