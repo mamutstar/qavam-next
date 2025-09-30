@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="cupcake">
+  <path fill="none" stroke="#222" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M40.26,58.63H23.74a6.19,6.19,0,0,1-5.85-4.18L10.24,32.11H53.76L46.12,54.45A6.19,6.19,0,0,1,40.26,58.63Z"></path>
+  <path fill="none" stroke="#222" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M38.21,11C47.45,13,54.72,19.15,57,26.9a4.1,4.1,0,0,1-4,5.21H11A4.1,4.1,0,0,1,7,26.9C9.28,19.16,16.54,13,25.76,11"></path>
+  <circle cx="32" cy="11.61" r="6.24" fill="none" stroke="#222" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></circle>
+</svg>
