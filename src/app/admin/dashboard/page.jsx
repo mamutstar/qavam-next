@@ -64,11 +64,31 @@ export default function AdminDashboard() {
 
       {/* فرم افزودن غذا */}
       <h3>افزودن غذا</h3>
+      <br/>
       <input
         type="text"
         placeholder="نام غذا"
         value={newFood.name}
         onChange={(e) => setNewFood({ ...newFood, name: e.target.value })}
+      />
+      <input
+        type="text"
+        placeholder="name of food"
+        value={newFood.en_name}
+        onChange={(e) => setNewFood({ ...newFood, en_name: e.target.value })}
+      />
+      <textarea
+      
+        type="text"
+        placeholder="محتویات غذا"
+        value={newFood.description}
+        onChange={(e) => setNewFood({ ...newFood, description: e.target.value })}
+      />
+      <textarea
+        type="text"
+        placeholder=" Food contents"
+        value={newFood.en_description}
+        onChange={(e) => setNewFood({ ...newFood, en_description: e.target.value })}
       />
       <input
         type="text"
