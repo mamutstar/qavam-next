@@ -19,5 +19,5 @@ export function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/"], // فقط مسیرهای /admin
+  matcher: ["/admin"], // فقط مسیرهای /admin
 };

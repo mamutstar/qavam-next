@@ -1,9 +1,9 @@
-"use client";
-import { redirect } from "next/navigation";
+// "use client";
+// import { redirect } from "next/navigation";
 
-export default function AdminRoot() {
-  redirect("/admin/login");
-}
+// export default function AdminRoot() {
+//   redirect("/admin/login");
+// }
 // import { useEffect, useState } from "react";
 
 // export default function AdminPage() {
