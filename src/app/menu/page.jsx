@@ -1,6 +1,6 @@
 
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './FoodMenu.module.css';
 import QavamHeaderPoster from '../../../public/assets/images/logo/qavamHeaderPoster2.png';
 import MenuCategoryButtons from '../../components/MenuCategoryButton';
@@ -12,11 +12,22 @@ import ExampleImage from '../../../public/assets/images/foodImage/anh-nguyen-kcA
 
 export default function FoodMenu() {
   const [selectedFood, setSelectedFood] = useState(null);
-  const foods = [
-    { id: 1, name: "Truffle Pasta", price: 120000, image: '/assets/images/foodImage/anh-nguyen-kcA-c3f_3FE-unsplash.jpg', description: "Our classic Margherita pizza features fresh mozzarella cheese, garden-fresh basil leaves, and our signature tomato sauce on a perfectly crispy wood-fired crust." },
-    { id: 2, name: "Pasta Carbonara", price: 150000, image: '/assets/images/foodImage/anh-nguyen-kcA-c3f_3FE-unsplash.jpg', description: "Our classic Margherita pizza features fresh mozzarella cheese, garden-fresh basil leaves, and our signature tomato sauce on a perfectly crispy wood-fired crust." },
-    { id: 3, name: "Margherita Pizza", price: 150000, image: '/assets/images/foodImage/anh-nguyen-kcA-c3f_3FE-unsplash.jpg', description: "Our classic Margherita pizza features fresh mozzarella cheese, garden-fresh basil leaves, and our signature tomato sauce on a perfectly crispy wood-fired crust." }
-  ];
+  const [foods, setFoods] = useState([]);
+  // const foods = [
+  //   { id: 1, name: "Truffle Pasta", price: 120000, image: '/assets/images/foodImage/anh-nguyen-kcA-c3f_3FE-unsplash.jpg', description: "Our classic Margherita pizza features fresh mozzarella cheese, garden-fresh basil leaves, and our signature tomato sauce on a perfectly crispy wood-fired crust." },
+  //   { id: 2, name: "Pasta Carbonara", price: 150000, image: '/assets/images/foodImage/anh-nguyen-kcA-c3f_3FE-unsplash.jpg', description: "Our classic Margherita pizza features fresh mozzarella cheese, garden-fresh basil leaves, and our signature tomato sauce on a perfectly crispy wood-fired crust." },
+  //   { id: 3, name: "Margherita Pizza", price: 150000, image: '/assets/images/foodImage/anh-nguyen-kcA-c3f_3FE-unsplash.jpg', description: "Our classic Margherita pizza features fresh mozzarella cheese, garden-fresh basil leaves, and our signature tomato sauce on a perfectly crispy wood-fired crust." }
+  // ];
+  // گرفتن لیست غذاها
+  const fetchFoods = async () => {
+    const res = await fetch("/api/foods");
+    const data = await res.json();
+    console.log(data)
+    setFoods(data);
+  };
+  useEffect(() => {
+    fetchFoods();
+  }, []);
   return (
     <div className={styles.bodyy}>
         <img className={styles.qavamHeaderImg} src='/assets/images/logo/qavamHeaderPoster2.png'/>

@@ -20,6 +20,7 @@ export async function POST(req) {
   const price = formData.get("price");
   const description = formData.get("description");
   const en_description = formData.get("en_description");
+  const category = formData.get("category");
   const image = formData.get("image"); // فایل واقعی
 
   if (!image) {
@@ -35,8 +36,8 @@ export async function POST(req) {
   // ذخیره مسیر فایل در دیتابیس
   const imagePath = "/uploads/" + filename;
   await db.query(
-    "INSERT INTO foodinformationen (name, en_name, price, description, en_description, image) VALUES (?, ?, ?, ?)",
-    [name,en_name, price, description,en_description, imagePath]
+    "INSERT INTO foodinformationen (name, en_name, price, description, en_description,category, image) VALUES (?, ?, ?, ?,?,?,?)",
+    [name,en_name, price, description,en_description,category, imagePath]
   );
 
   return NextResponse.json({ message: "Food added" }, { status: 201 });

@@ -45,7 +45,7 @@
         justify-content: center;
         align-items: center;
     img{
-        
+        object-fit: cover;
         aspect-ratio: 1/1;
         max-width: 90px;
         border-radius: 15px;
@@ -104,5 +104,18 @@
         height: 40px;
     }
 }
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
 
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+}
+.rtlDesc {
+  
+  text-align: right !important;
 }

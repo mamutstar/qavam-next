@@ -96,6 +96,7 @@ export async function PUT(req, context) {
   const en_name = formData.get("en_name");
   const description = formData.get("description");
   const en_description = formData.get("en_description");
+  const category = formData.get("category");
   const price = formData.get("price");
   const image = formData.get("image");
 
@@ -114,7 +115,7 @@ export async function PUT(req, context) {
     const filePath = path.join(uploadDir, image.name);
     fs.writeFileSync(filePath, buffer);
 
-    imagePath = `'/uploads/${image.name}'`;
+    imagePath = `/uploads/${image.name}`;
   }
 
   // اگر عکس جدید نیومده، عکس قبلی رو نگه دار
@@ -127,8 +128,8 @@ export async function PUT(req, context) {
   }
 
   await db.query(
-    "UPDATE foodinformationen SET name=?, en_name=?, price=?, description=?, en_description=?, image=? WHERE id=?",
-    [name, en_name, price, description, en_description, imagePath, id]
+    "UPDATE foodinformationen SET name=?, en_name=?, price=?, description=?, en_description=?,category=?, image=? WHERE id=?",
+    [name, en_name, price, description, en_description, category, imagePath, id]
   );
 
   return new Response(JSON.stringify({ message: "Food updated" }), {
