@@ -22,6 +22,7 @@ FoodItem ({ food, onClick }) {
     
   const displayName = language === 'fa' ? food.name : food.en_name;
   const displayDescription = language === 'fa' ? food.description : food.en_description;
+  const addOrder = language === 'fa' ? "افزودن" : "Add To Order";
     const handleClick = () => {
     setSelectedFood(food);  // وقتی روی غذا کلیک می‌کنیم، اطلاعات غذا رو می‌گذاریم در State
   };
@@ -35,12 +36,12 @@ FoodItem ({ food, onClick }) {
                 <h3>{displayName}</h3>
                 <p className={`${language === 'fa' ? styles.rtlDesc : styles.ltr}`}>{displayDescription}</p>
                 <div className={styles.priceFoodContainer}>
-                    <p>
+                    <p className={`${language === 'fa' ? styles.priceRtl : ""}`}>
                         
                         <span  content={food.price}>{food.price}</span>
                         <span  content="TOOMAN">T</span>
                     </p>
-                    <button>Add to Order</button>
+                    <button>{addOrder}</button>
                 </div>
             </div>
         </div>

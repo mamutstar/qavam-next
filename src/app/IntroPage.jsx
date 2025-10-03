@@ -32,11 +32,15 @@ export default function IntroPage() {
       <div className={styles.goToMenuContainer}>
         <div className={styles.goToPersianMenu}>
           <img className={styles.languageIcon} src='/assets/iran.svg'/>
+          <Link href="/menu?lang=fa">
           <p>رفتن به منــــــــــو</p>
+          </Link>
         </div>
         <div className={styles.goToEnglishMenu}>
           <img className={styles.languageIcon} src='/assets/england.svg'/>
+          <Link href="/menu?lang=en">
           <p>go to the menu</p>
+          </Link>
         </div>
         
 

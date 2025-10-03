@@ -116,6 +116,9 @@
 
 }
 .rtlDesc {
-  
+  font-size: 12px !important;
+  text-align: right !important;
+}
+.priceRtl{
   text-align: right !important;
 }
