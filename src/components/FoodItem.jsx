@@ -5,9 +5,12 @@ import styles from './FoodItem.module.css'
 import FoodModal from './FoodModal'
 import { useSearchParams } from 'next/navigation'; // اگر پروژه‌ی شما Next.js است
 // اگر React معمولی هست، از window.location.search استفاده می‌کنیم
+const toEnglishNumber = (num) => {
+  return num.toString().replace(/[۰-۹]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
+};
 
  export default function 
-FoodItem ({ food, onClick }) {
+FoodItem ({ food, onClick , onAddToCart}) {
 
     const [selectedFood, setSelectedFood] = useState(null);
     const [language, setLanguage] = useState('fa'); // پیش‌فرض فارسی
@@ -38,10 +41,13 @@ FoodItem ({ food, onClick }) {
                 <div className={styles.priceFoodContainer}>
                     <p className={`${language === 'fa' ? styles.priceRtl : ""}`}>
                         
-                        <span  content={food.price}>{food.price}</span>
+                        <span  content={food.price}>{toEnglishNumber(food.price)}</span>
                         <span  content="TOOMAN">T</span>
                     </p>
-                    <button>{addOrder}</button>
+                    <button onClick={(e) => { 
+              e.stopPropagation(); // جلوگیری از باز شدن مودال
+              onAddToCart(food); 
+            }}>{addOrder}</button>
                 </div>
             </div>
         </div>

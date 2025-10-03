@@ -1,18 +1,18 @@
-import React from 'react'
-import styles from './BottomNoteBook.module.css'
-import ShoppingCart from '../../public/assets/images/logo/shopping-cart-simple 1.svg'
+// import React from 'react';
+import styles from './BottomNoteBook.module.css';
 
-export default function BottomNoteBook() {
-    const itemCount = 3; // تعداد آیتم‌های سبد خرید (بعداً می‌تونی با state یا props تغییر بدی)
+export default function BottomNoteBook({ cartItems, onToggleCart }) {
+  // جمع تعداد آیتم‌ها (جمع همه quantity ها)
+  const itemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
     <div className={styles.bottomNoteBookContainer}>
-        <button className={styles.noteBookButton}>
-            <img src='/assets/images/logo/shopping-cart-simple 1.svg'></img>
-            {itemCount > 0 && (
+      <button className={styles.noteBookButton} onClick={onToggleCart}>
+        <img src="/assets/images/logo/shopping-cart-simple 1.svg" alt="cart" />
+        {itemCount > 0 && (
           <span className={styles.badge}>{itemCount}</span>
         )}
-        </button>
-
+      </button>
     </div>
-  )
+  );
 }
