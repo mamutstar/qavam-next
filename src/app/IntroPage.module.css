@@ -1,7 +1,4 @@
 
-@media (max-width: 768px) {
-  /* استایل مخصوص موبایل خیلی کوچک */
- 
 @font-face {
   font-family: 'YekanBakhThin';
   src: url('../../public/assets/fonts/200-YekanBakh-Thin.woff');
@@ -9,6 +6,25 @@
   
   
 }
+@font-face {
+  font-family: 'YekanBakhRegular';
+  src: url('../../public/assets/fonts/400-YekanBakh-Regular.woff');
+  font-weight: 200;
+  
+  
+}
+@font-face {
+  font-family: 'YekanBakhBold';
+  src: url('../../public/assets/fonts/600-YekanBakh-Bold.woff');
+  font-weight: 200;
+  
+  
+}
+@media (max-width: 768px) {
+  
+  /* استایل مخصوص موبایل خیلی کوچک */
+ 
+
   /* body {
     
     height: 100vh;
@@ -54,6 +70,19 @@
 }
 .qavamLogo{
     width: 50%;
+    opacity: 0; /* اول نامرئی باشه */
+  transform: translateY(-100px); /* از بالا بیاد */
+  animation: dropIn 1s ease-out forwards;
+}
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .bottomCard{
     position: fixed;    /* مهم‌ترین نکته */
@@ -132,6 +161,170 @@
           img{
             width: 25px;
             opacity: 50%;
+            /* display: inline-block; */
+            animation: shake 0.5s infinite;
+          }
+          
+          
+    }
+    @keyframes shake {
+  0% { transform: translate(0, 0) rotate(0); }
+  20% { transform: translate(-2px, 0) rotate(-2deg); }
+  40% { transform: translate(2px, 0) rotate(2deg); }
+  60% { transform: translate(-2px, 0) rotate(-2deg); }
+  80% { transform: translate(2px, 0) rotate(2deg); }
+  100% { transform: translate(0, 0) rotate(0); }
+}
+    
+.dinnerLunchContainer{
+  padding-top: 3px;
+  font-family: 'YekanBakhThin';
+  display: flex;
+  flex-direction: column ;
+  
+  
+  
+  div{
+    
+    padding-bottom: 0px;
+
+    
+  }
+   
+}
+.dinnerLunchContainer>div>p{
+  display: none;
+  font-size: 12px;
+    padding: 0 !important;
+    text-align: center;
+  
+}
+.adressContainer{
+  display: flex;
+  font-family: 'YekanBakhThin';
+  font-size: 12px;
+  p{
+    display: none;
+    padding: 2px;
+  }
+}
+}
+@media (min-width: 768px) and (max-width: 2400px) {
+
+  .topNavBar{
+  text-decoration: none;
+  font-family: 'YekanBakhRegular';
+  color: white;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  padding-top: 10px;
+  justify-content: center;
+  align-items: start;
+  gap: 30px;
+}
+
+.introGlassCard{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+    width: 80vw;
+    max-width: 1000px;
+    height: auto;
+     backdrop-filter: blur(19px) saturate(200%);
+    -webkit-backdrop-filter: blur(19px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.42);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+.qavamLogoContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding-top: 10%;
+}
+.qavamLogo{
+    width: 20%;
+}
+.bottomCard{
+    position: fixed;    /* مهم‌ترین نکته */
+  bottom: 0;          /* پایین صفحه */
+  left: 50%;          /* وسط صفحه افقی */
+  transform: translateX(-50%); /* مرکز کردن دقیق */
+  width: 100%;
+  height: 100px;
+  background-color: rgba(17, 25, 40, 0.42);
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+
+  backdrop-filter: blur(19px) saturate(200%);
+    -webkit-backdrop-filter: blur(19px) saturate(180%);
+    
+    
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+.goToMenuContainer{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.goToMenuContainer>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 234px;
+    height: 46px;
+  overflow: hidden;
+  
+   backdrop-filter: blur(-12px) saturate(180%);
+    -webkit-backdrop-filter: blur(-12px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+
+    p{
+      
+      
+      font-family: 'YekanBakhRegular';
+      font-size: 14px;
+      color: aliceblue;
+    }
+    .languageIcon{
+      margin-left: -60px;
+      aspect-ratio: 1 / 1;   /* نسبت ۱ به ۱ */
+      object-fit: cover;
+      width: 60px;
+      border-radius: 600px;
+    }
+    
+}
+.workInfoContainer{
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+      width: 100%;
+      height: 150px;
+      margin-top: auto;
+      
+          border-radius: 12px;
+          >div{
+           
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+          }
+
+          img{
+            width: 25px;
+            opacity: 50%;
           }
           
     }
@@ -167,10 +360,5 @@
     padding: 2px;
   }
 }
-}
-@media (min-width: 768px) and (max-width: 1200px) {
   /* استایل تبلت */
-}
-@media (min-width: 1200px) and (max-width: 1700px) {
-  /* استایل دسکتاپ معمولی */
 }

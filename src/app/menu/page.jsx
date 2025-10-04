@@ -68,6 +68,8 @@ export default function FoodMenu() {
         .filter(item => item.quantity > 0) // حذف اگه صفر شد
     );
   };
+
+  
   
 
   return (
@@ -81,7 +83,7 @@ export default function FoodMenu() {
 
       {/* دسته‌بندی */}
       <MenuCategoryButtons onSelectCategory={setSelectedCategory} />
-
+      <div className={styles.scrollOverflow}>
       {/* لیست غذاها */}
       {filteredFoods.length > 0 ? (
         filteredFoods.map(food => (
@@ -97,7 +99,7 @@ export default function FoodMenu() {
           آیتمی موجود نیست، لطفاً دسته دیگری انتخاب کنید.
         </p>
       )}
-
+        </div>
       {/* دکمه پایین صفحه */}
       <NoteBook
         itemCount={cart.reduce((sum, i) => sum + i.quantity, 0)}

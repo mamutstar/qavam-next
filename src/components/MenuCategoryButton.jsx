@@ -21,6 +21,8 @@ export default function MenuCategoryButton({ onSelectCategory }) {
     const desserts = language === 'fa' ? "دسر" : "Desserts";
     const drink = language === 'fa' ? "نوشیدنی" : "Drink";
 
+    
+
 
   return (
     // <div className={styles.menuCategoryContainer}>
@@ -50,7 +52,7 @@ export default function MenuCategoryButton({ onSelectCategory }) {
     //       </button>
 
     // </div>
-    <div className={styles.menuCategoryContainer}>
+    <div  className={styles.menuCategoryContainer} >
       <button onClick={() => onSelectCategory("persianFood")}>
         <img src='/assets/images/logo/meal.svg'/>
         <p>{persianFood}</p>

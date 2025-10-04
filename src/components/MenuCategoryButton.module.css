@@ -23,6 +23,7 @@
   
 }
 .menuCategoryContainer{
+  
     width: 100%;
     flex-wrap: wrap;
     display: flex;
@@ -32,6 +33,7 @@
     height: fit-content;
     
 }
+
 .menuCategoryContainer>button{
         width: 30%;
         height: 95px;

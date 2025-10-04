@@ -8,7 +8,7 @@ import { useSearchParams } from 'next/navigation'; // اگر پروژه‌ی ش�
 
 
  export default function 
-FoodItem ({ food, onClick , onAddToCart}) {
+FoodItem ({ food, onClick , onAddToCart , isFixed}) {
 
     const [selectedFood, setSelectedFood] = useState(null);
     const [language, setLanguage] = useState('fa'); // پیش‌فرض فارسی
@@ -29,7 +29,7 @@ FoodItem ({ food, onClick , onAddToCart}) {
   };
   return (
     <div >
-        <div className={`${styles.foodItemContainer} ${language === 'fa' ? styles.rtl : styles.ltr}`} onClick={onClick} >
+        <div className={styles.foodItemContainer}  onClick={onClick} >
             <div className={styles.foodImgContainer}>
                 <img src={food.image}/>
             </div>
