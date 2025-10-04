@@ -1,7 +1,6 @@
-// import React from 'react';
-import styles from './CartSidebar.module.css';
+ import styles from './CartSidebar.module.css';
 
-export default function CartSidebar({ isOpen, onClose, cartItems, onIncrease, onDecrease }) {
+export default function CartSidebar({ isOpen, onClose, cartItems, updateQuantity }) {
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
@@ -20,9 +19,9 @@ export default function CartSidebar({ isOpen, onClose, cartItems, onIncrease, on
                 <p>{item.price.toLocaleString()} تومان</p>
               </div>
               <div className={styles.quantity}>
-                <button onClick={() => onDecrease(item.id)}>-</button>
+                <button onClick={() => updateQuantity(item.id, -1)}>-</button>
                 <span>{item.quantity}</span>
-                <button onClick={() => onIncrease(item.id)}>+</button>
+                <button onClick={() => updateQuantity(item.id, +1)}>+</button>
               </div>
             </div>
           ))
@@ -30,7 +29,9 @@ export default function CartSidebar({ isOpen, onClose, cartItems, onIncrease, on
       </div>
 
       <div className={styles.totalSection}>
-        <p className={styles.totalPrice}>جمع کل: {total.toLocaleString()} تومان</p>
+        <p className={styles.totalPrice}>
+          جمع کل: {total.toLocaleString()} تومان
+        </p>
         <button className={styles.checkoutBtn}>ثبت سفارش</button>
       </div>
     </div>

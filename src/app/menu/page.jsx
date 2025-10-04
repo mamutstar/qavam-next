@@ -1,48 +1,53 @@
-
 'use client';
 import React, { useEffect, useState } from 'react';
 import styles from './FoodMenu.module.css';
 import QavamHeaderPoster from '../../../public/assets/images/logo/qavamHeaderPoster2.png';
 import MenuCategoryButtons from '../../components/MenuCategoryButton';
 import FoodItem from '../../components/FoodItem';
-import NoteBook from '../../components/BottomNoteBook'
+import NoteBook from '../../components/BottomNoteBook';
 import FoodModal from "../../components/FoodModal";
-import ExampleImage from '../../../public/assets/images/foodImage/anh-nguyen-kcA-c3f_3FE-unsplash.jpg'
-import CartSidebar from "../../components/CartSidebar"; // 🔥 اضافه شد
-
-
+import CartSidebar from "../../components/CartSidebar";
 
 export default function FoodMenu() {
   const [selectedFood, setSelectedFood] = useState(null);
   const [foods, setFoods] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  const [cartItems, setCartItems] = useState([]);
+  const [cart, setCart] = useState([]); // فقط همین
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // const foods = [
-  //   { id: 1, name: "Truffle Pasta", price: 120000, image: '/assets/images/foodImage/anh-nguyen-kcA-c3f_3FE-unsplash.jpg', description: "Our classic Margherita pizza features fresh mozzarella cheese, garden-fresh basil leaves, and our signature tomato sauce on a perfectly crispy wood-fired crust." },
-  //   { id: 2, name: "Pasta Carbonara", price: 150000, image: '/assets/images/foodImage/anh-nguyen-kcA-c3f_3FE-unsplash.jpg', description: "Our classic Margherita pizza features fresh mozzarella cheese, garden-fresh basil leaves, and our signature tomato sauce on a perfectly crispy wood-fired crust." },
-  //   { id: 3, name: "Margherita Pizza", price: 150000, image: '/assets/images/foodImage/anh-nguyen-kcA-c3f_3FE-unsplash.jpg', description: "Our classic Margherita pizza features fresh mozzarella cheese, garden-fresh basil leaves, and our signature tomato sauce on a perfectly crispy wood-fired crust." }
-  // ];
+  // --- بارگذاری اولیه از localStorage ---
+  useEffect(() => {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+      setCart(JSON.parse(savedCart));
+    }
+  }, []);
+
+  // --- هر بار cart تغییر کرد ذخیره کن ---
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
   // گرفتن لیست غذاها
   const fetchFoods = async () => {
     const res = await fetch("/api/foods");
     const data = await res.json();
-    console.log(data)
     setFoods(data);
   };
+
   useEffect(() => {
     fetchFoods();
   }, []);
+
   // فیلتر کردن غذاها
   const filteredFoods = selectedCategory
     ? foods.filter(food => food.category === selectedCategory)
     : foods;
 
-     // اضافه کردن آیتم به سبد خرید
+  // اضافه کردن آیتم به سبد خرید
   const addToCart = (food) => {
-    setCartItems(prev => {
+    setCart(prev => {
       const existing = prev.find(item => item.id === food.id);
       if (existing) {
         return prev.map(item =>
@@ -55,7 +60,7 @@ export default function FoodMenu() {
 
   // تغییر تعداد آیتم‌ها
   const updateQuantity = (id, amount) => {
-    setCartItems(prev =>
+    setCart(prev =>
       prev
         .map(item =>
           item.id === id ? { ...item, quantity: item.quantity + amount } : item
@@ -63,22 +68,28 @@ export default function FoodMenu() {
         .filter(item => item.quantity > 0) // حذف اگه صفر شد
     );
   };
+  
 
   return (
     <div className={styles.bodyy}>
-        <img className={styles.qavamHeaderImg} src='/assets/images/logo/qavamHeaderPoster2.png'/>
-        <MenuCategoryButtons onSelectCategory={setSelectedCategory}>
-          
-        </MenuCategoryButtons>
+      {/* هدر */}
+      <img
+        className={styles.qavamHeaderImg}
+        src='/assets/images/logo/qavamHeaderPoster2.png'
+        alt="Header Poster"
+      />
 
-         {/* لیست غذاها */}
+      {/* دسته‌بندی */}
+      <MenuCategoryButtons onSelectCategory={setSelectedCategory} />
+
+      {/* لیست غذاها */}
       {filteredFoods.length > 0 ? (
         filteredFoods.map(food => (
           <FoodItem
             key={food.id}
             food={food}
             onClick={() => setSelectedFood(food)}
-            onAddToCart={addToCart} // 🔥 اضافه شد
+            onAddToCart={addToCart}
           />
         ))
       ) : (
@@ -87,21 +98,26 @@ export default function FoodMenu() {
         </p>
       )}
 
-        <NoteBook 
-  cartItems={cartItems} 
-  onToggleCart={() => setIsCartOpen(!isCartOpen)} 
-/>
-        {/* مودال */}
+      {/* دکمه پایین صفحه */}
+      <NoteBook
+        itemCount={cart.reduce((sum, i) => sum + i.quantity, 0)}
+        
+        
+        onToggleCart={() => setIsCartOpen(!isCartOpen)}
+      />
+      
+       
+      {/* مودال غذا */}
       <FoodModal food={selectedFood} onClose={() => setSelectedFood(null)} />
 
-        {/* سایدبار سبد خرید */}
+      {/* سایدبار سبد خرید */}
       <CartSidebar
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
-        cartItems={cartItems}
+        cartItems={cart}
         updateQuantity={updateQuantity}
       />
-        
     </div>
-  )
+  );
+  
 }
