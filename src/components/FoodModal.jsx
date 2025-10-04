@@ -4,7 +4,7 @@ import CloseBtn from "../../public/assets/images/logo/close.svg"
 import { useSearchParams } from 'next/navigation';
 
 
-export default function FoodModal({ food, onClose }) {
+export default function FoodModal({ food, onClose , onAddToCart}) {
   if (!food) return null; // اگه غذایی انتخاب نشده مودال نشون نده
   const [language, setLanguage] = useState('fa'); // پیش‌فرض فارسی
     const searchParams = useSearchParams();
@@ -27,7 +27,13 @@ export default function FoodModal({ food, onClose }) {
         <p>{displayDescription}</p>
         <p className={styles.price}>{food.price}T</p>
         <button className={styles.closeBtn} onClick={onClose}><img src='/assets/images/logo/close.svg'/></button>
-        <button className={styles.addButton}>{addOrder}</button>
+        <button
+         className={styles.addButton}
+         onClick={() => {
+            onAddToCart(food);   // آیتم به سبد خرید اضافه میشه
+                       // بعدش مودال بسته میشه (اختیاری)
+          }}
+         >{addOrder}</button>
       </div>
       
     </div>

@@ -5,9 +5,7 @@ import styles from './FoodItem.module.css'
 import FoodModal from './FoodModal'
 import { useSearchParams } from 'next/navigation'; // اگر پروژه‌ی شما Next.js است
 // اگر React معمولی هست، از window.location.search استفاده می‌کنیم
-const toEnglishNumber = (num) => {
-  return num.toString().replace(/[۰-۹]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d));
-};
+
 
  export default function 
 FoodItem ({ food, onClick , onAddToCart}) {
@@ -41,7 +39,7 @@ FoodItem ({ food, onClick , onAddToCart}) {
                 <div className={styles.priceFoodContainer}>
                     <p className={`${language === 'fa' ? styles.priceRtl : ""}`}>
                         
-                        <span  content={food.price}>{toEnglishNumber(food.price)}</span>
+                        <span  content={food.price}>{(food.price)}</span>
                         <span  content="TOOMAN">T</span>
                     </p>
                     <button onClick={(e) => { 
@@ -51,41 +49,7 @@ FoodItem ({ food, onClick , onAddToCart}) {
                 </div>
             </div>
         </div>
-        {/* <div className={styles.foodItemContainer}>
-            <div className={styles.foodImgContainer}>
-                <img src={FoodItem1}/>
-            </div>
-            <div className={styles.foodInfoContainer}>
-                <h3>Trufel Passta</h3>
-                <p>Delicate handmade pasta tossed in a rich truffle cream sauce, finished with freshly grated Parmesan cheese and black truffle shavings.</p>
-                <div className={styles.priceFoodContainer}>
-                    <p>
-                        
-                        <span  content="24.99">240.000</span>
-                        <span  content="TOOMAN">T</span>
-                    </p>
-                    <button>Add to Order</button>
-                </div>
-            </div>
-        </div>
-        <div className={styles.foodItemContainer}>
-            <div className={styles.foodImgContainer}>
-                <img src={FoodItem1}/>
-            </div>
-            <div className={styles.foodInfoContainer}>
-                <h3>Trufel Passta</h3>
-                <p>Delicate handmade pasta tossed in a rich truffle cream sauce, finished with freshly grated Parmesan cheese and black truffle shavings.</p>
-                <div className={styles.priceFoodContainer}>
-                    <p>
-                        
-                        <span  content="24.99">240.000</span>
-                        <span  content="TOOMAN">T</span>
-                    </p>
-                    <button>Add to Order</button>
-                </div>
-            </div>
-        </div> */}
-        {/* <FoodModal food={selectedFood} onClose={() => setSelectedFood(null)} /> */}
+        
     </div>
   )
 }

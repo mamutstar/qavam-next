@@ -108,7 +108,11 @@ export default function FoodMenu() {
       
        
       {/* مودال غذا */}
-      <FoodModal food={selectedFood} onClose={() => setSelectedFood(null)} />
+      <FoodModal 
+      food={selectedFood} 
+      onClose={() => setSelectedFood(null)}
+      onAddToCart={addToCart}
+      />
 
       {/* سایدبار سبد خرید */}
       <CartSidebar

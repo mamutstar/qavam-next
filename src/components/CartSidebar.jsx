@@ -1,7 +1,23 @@
+ import React, { useState ,useEffect } from 'react';
+ import { useSearchParams } from 'next/navigation';
  import styles from './CartSidebar.module.css';
+
+
 
 export default function CartSidebar({ isOpen, onClose, cartItems, updateQuantity }) {
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+  const [language, setLanguage] = useState('fa'); // پیش‌فرض فارسی
+    const searchParams = useSearchParams();
+     useEffect(() => {
+    // گرفتن query lang از URL
+    const lang = searchParams.get('lang'); // ?lang=en یا ?lang=fa
+    if (lang === 'en' || lang === 'fa') {
+      setLanguage(lang);
+    }
+  }, [searchParams]);
+  
+  
 
   return (
     <div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
@@ -15,7 +31,7 @@ export default function CartSidebar({ isOpen, onClose, cartItems, updateQuantity
             <div key={item.id} className={styles.cartItem}>
               <img src={item.image} alt={item.name} />
               <div className={styles.cartInfo}>
-                <h4>{item.name}</h4>
+                <h4>{language === 'fa' ? item.name : item.en_name}</h4>
                 <p>{item.price.toLocaleString()} تومان</p>
               </div>
               <div className={styles.quantity}>
@@ -32,7 +48,7 @@ export default function CartSidebar({ isOpen, onClose, cartItems, updateQuantity
         <p className={styles.totalPrice}>
           جمع کل: {total.toLocaleString()} تومان
         </p>
-        <button className={styles.checkoutBtn}>ثبت سفارش</button>
+        <button className={styles.checkoutBtn} onClick={onClose}> ادامه سفارش</button>
       </div>
     </div>
   );
