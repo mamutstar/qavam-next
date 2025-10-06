@@ -2,8 +2,8 @@ import React, { useState ,useEffect } from 'react';
 import styles from './MenuCategoryButton.module.css'
 import { useSearchParams } from 'next/navigation';
 
-export default function MenuCategoryButton({ onSelectCategory }) {
-
+export default function MenuCategoryButton({ onSelectCategory,scrolled }) {
+scrolled=false
   const [language, setLanguage] = useState('fa'); // پیش‌فرض فارسی
       const searchParams = useSearchParams();
        useEffect(() => {
@@ -22,7 +22,7 @@ export default function MenuCategoryButton({ onSelectCategory }) {
     const drink = language === 'fa' ? "نوشیدنی" : "Drink";
 
     
-
+    console.log(scrolled);
 
   return (
     // <div className={styles.menuCategoryContainer}>
@@ -52,8 +52,8 @@ export default function MenuCategoryButton({ onSelectCategory }) {
     //       </button>
 
     // </div>
-    <div  className={styles.menuCategoryContainer} >
-      <button onClick={() => onSelectCategory("persianFood")}>
+    <div   className={scrolled ? styles.menuCategoryContainerScrolled : styles.menuCategoryContainer} >
+      <button  onClick={() => onSelectCategory("persianFood")}>
         <img src='/assets/images/logo/meal.svg'/>
         <p>{persianFood}</p>
       </button>
@@ -77,6 +77,7 @@ export default function MenuCategoryButton({ onSelectCategory }) {
         <img src='/assets/images/logo/cola.svg'/>
         <p>{drink}</p>
       </button>
+      <p>*</p>
     </div>
   )
 }

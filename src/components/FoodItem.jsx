@@ -4,6 +4,7 @@ import styles from './FoodItem.module.css'
 // import FoodItem1 from '../assets/images/foodImage/anh-nguyen-kcA-c3f_3FE-unsplash.jpg'
 import FoodModal from './FoodModal'
 import { useSearchParams } from 'next/navigation'; // اگر پروژه‌ی شما Next.js است
+
 // اگر React معمولی هست، از window.location.search استفاده می‌کنیم
 
 
@@ -20,6 +21,24 @@ FoodItem ({ food, onClick , onAddToCart , isFixed}) {
       setLanguage(lang);
     }
   }, [searchParams]);
+
+
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) { // مثلا وقتی 200px اسکرول شد
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // پاک کردن eventListener وقتی کامپوننت از بین میره
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
     
   const displayName = language === 'fa' ? food.name : food.en_name;
   const displayDescription = language === 'fa' ? food.description : food.en_description;
@@ -29,7 +48,7 @@ FoodItem ({ food, onClick , onAddToCart , isFixed}) {
   };
   return (
     <div >
-        <div className={styles.foodItemContainer}  onClick={onClick} >
+        <div className={styles.foodItemContainer}  onClick={onClick} scrolled={scrolled}>
             <div className={styles.foodImgContainer}>
                 <img src={food.image}/>
             </div>

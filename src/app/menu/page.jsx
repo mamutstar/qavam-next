@@ -15,6 +15,7 @@ export default function FoodMenu() {
 
   const [cart, setCart] = useState([]); // فقط همین
   const [isCartOpen, setIsCartOpen] = useState(false);
+  
 
   // --- بارگذاری اولیه از localStorage ---
   useEffect(() => {
@@ -83,7 +84,7 @@ export default function FoodMenu() {
 
       {/* دسته‌بندی */}
       <MenuCategoryButtons onSelectCategory={setSelectedCategory} />
-      <div className={styles.scrollOverflow}>
+      <div className={styles.scrollOverflow}  >
       {/* لیست غذاها */}
       {filteredFoods.length > 0 ? (
         filteredFoods.map(food => (
