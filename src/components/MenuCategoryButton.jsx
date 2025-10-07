@@ -77,7 +77,7 @@ scrolled=false
         <img src='/assets/images/logo/cola.svg'/>
         <p>{drink}</p>
       </button>
-      <p>*</p>
+      
     </div>
   )
 }

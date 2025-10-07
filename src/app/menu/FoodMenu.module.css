@@ -14,15 +14,17 @@
         
     }
     .scrollOverflow{
-        overflow-y: auto;
+        /* overflow-y: auto; */
        
-  overflow-y: auto;
-  max-height: 540px;
+  /* overflow-y: auto; */
+  
+  /* max-height: 540px; */
+  
   
     }
 
     .qavamHeaderImg{
-        
+        margin: 0 auto;
         width: 95vw;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;

@@ -78,7 +78,7 @@ export default function FoodMenu() {
       {/* هدر */}
       <img
         className={styles.qavamHeaderImg}
-        src='/assets/images/logo/qavamHeaderPoster2.png'
+        src='/assets/images/logo/qavamHeaderPoster3.png'
         alt="Header Poster"
       />
 
