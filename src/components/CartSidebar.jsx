@@ -32,7 +32,7 @@ export default function CartSidebar({ isOpen, onClose, cartItems, updateQuantity
               <img src={item.image} alt={item.name} />
               <div className={styles.cartInfo}>
                 <h4>{language === 'fa' ? item.name : item.en_name}</h4>
-                <p>{item.price.toLocaleString()} تومان</p>
+                <p className={language === 'en' ? `${styles.englishFont}` : ""}>{Number(item.price).toLocaleString('en-US')} {language === 'en' ? "T" : "تومان"}</p>
               </div>
               <div className={styles.quantity}>
                 <button onClick={() => updateQuantity(item.id, -1)}>-</button>
@@ -45,10 +45,10 @@ export default function CartSidebar({ isOpen, onClose, cartItems, updateQuantity
       </div>
 
       <div className={styles.totalSection}>
-        <p className={styles.totalPrice}>
-          جمع کل: {total.toLocaleString()} تومان
+        <p className={`${styles.totalPrice} ${language === 'en' ? `${styles.englishFont}` : ""}`}> {language === 'en' ? "Total Price :" : "جمع کل:"}
+           {total.toLocaleString()} {language === 'en' ? "T" : "تومان"}
         </p>
-        <button className={styles.checkoutBtn} onClick={onClose}> ادامه سفارش</button>
+        <button className={styles.checkoutBtn} onClick={onClose}> {language === 'en' ? "Back To Order" : "ادامه سفارش"}</button>
       </div>
     </div>
   );

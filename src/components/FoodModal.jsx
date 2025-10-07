@@ -25,7 +25,7 @@ export default function FoodModal({ food, onClose , onAddToCart}) {
         <img src={food.image} alt={food.name} className={styles.foodImage} />
         <h2>{displayName}</h2>
         <p>{displayDescription}</p>
-        <p className={styles.price}>{food.price}T</p>
+        <p className={`${styles.price} ${language === 'en' ? `${styles.englishPrice}` : ""}`}>{Number(food.price).toLocaleString('en-US')}T</p>
         <button className={styles.closeBtn} onClick={onClose}><img src='/assets/images/logo/close.svg'/></button>
         <button
          className={styles.addButton}

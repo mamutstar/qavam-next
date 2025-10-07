@@ -1,6 +1,4 @@
-
-@media (max-width: 768px) {
-    @font-face {
+ @font-face {
   font-family: 'YekanBakhThin';
   src: url('../../public/assets/fonts/200-YekanBakh-Thin.woff');
   font-weight: 200;
@@ -21,6 +19,16 @@
   
   
 }
+@font-face {
+  font-family: 'Chopin';
+  src: url('../../public/assets/fonts/Chopin-Light.ttf');
+  font-weight: 200;
+  
+  
+}
+
+@media (max-width: 768px) {
+   
 .scrollOverflow{
   
 }
@@ -39,6 +47,10 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -6px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     
     
+    
+}
+.rtlDirection{
+direction: rtl;
 }
 
 .foodImgContainer{
@@ -126,4 +138,9 @@
 }
 .priceRtl{
   text-align: right !important;
+}
+.englishFont{
+  font-family: "Chopin" !important;
+  font-weight: 600;
+  color: black;
 }

@@ -16,6 +16,7 @@ export default function FoodMenu() {
 
   const [cart, setCart] = useState([]); // فقط همین
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
   
 
   // --- بارگذاری اولیه از localStorage ---
@@ -32,15 +33,32 @@ export default function FoodMenu() {
   }, [cart]);
 
   // گرفتن لیست غذاها
-  const fetchFoods = async () => {
-    const res = await fetch("/api/foods");
-    const data = await res.json();
-    setFoods(data);
-  };
+  // const fetchFoods = async () => {
+  //   const res = await fetch("/api/foods");
+  //   const data = await res.json();
+  //   setFoods(data);
+  // };
 
-  useEffect(() => {
-    fetchFoods();
-  }, []);
+  // useEffect(() => {
+  //   fetchFoods();
+  // }, []);
+
+  const fetchFoods = async () => {
+  try {
+    setLoading(true); // شروع لودینگ
+    const res = await fetch("/api/foods"); // API خودت
+    const data = await res.json();
+    setFoods(data);  // ذخیره غذاها
+  } catch (error) {
+    console.error("خطا در گرفتن لیست غذاها:", error);
+  } finally {
+    setLoading(false); // پایان لودینگ
+  }
+};
+
+useEffect(() => {
+  fetchFoods();
+}, []);
 
   // فیلتر کردن غذاها
   const filteredFoods = selectedCategory
@@ -85,9 +103,11 @@ export default function FoodMenu() {
 
       {/* دسته‌بندی */}
       <MenuCategoryButtons onSelectCategory={setSelectedCategory} selectedCategory={selectedCategory} />
+      
+ 
       <div className={styles.scrollOverflow}  >
-      {/* لیست غذاها */}
-      {filteredFoods.length > 0 ? (
+      {loading ? (  <div className={styles.loader}><img src='/assets/images/logo/lineVector.svg'/></div>
+      ) : filteredFoods.length > 0 ? (
         filteredFoods.map(food => (
           <FoodItem
             key={food.id}

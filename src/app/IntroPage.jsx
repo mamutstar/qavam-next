@@ -54,7 +54,7 @@ export default function IntroPage() {
           <div><p>lunch<br/>19:30 to 23:00</p></div>
         </div>
         </div>
-        <div><img className={styles.timeLocIcon} src='/assets/images/logo/whiteLocation.svg'/>
+        <div><a href="geo:28.98669639134926, 50.82755359796483"><img className={styles.timeLocIcon} src='/assets/images/logo/whiteLocation.svg'/></a>
         <div className={styles.adressContainer}>
           <p>Adress<br/>Old City Structure, Bushehr, Bushehr Province, Iran</p>
 

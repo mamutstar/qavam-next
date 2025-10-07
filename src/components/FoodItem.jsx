@@ -48,7 +48,7 @@ FoodItem ({ food, onClick , onAddToCart , isFixed}) {
   };
   return (
     <div >
-        <div className={styles.foodItemContainer}  onClick={onClick} scrolled={scrolled}>
+        <div className={`${styles.foodItemContainer} ${language === 'fa' ? styles.rtlDirection : ""}`}  onClick={onClick} scrolled={scrolled}>
             <div className={styles.foodImgContainer}>
                 <img src={food.image}/>
             </div>
@@ -58,7 +58,8 @@ FoodItem ({ food, onClick , onAddToCart , isFixed}) {
                 <div className={styles.priceFoodContainer}>
                     <p className={`${language === 'fa' ? styles.priceRtl : ""}`}>
                         
-                        <span  content={food.price}>{(food.price)}</span>
+                        <span className={language === 'en' ? `${styles.englishFont}` : ""} 
+                          content={food.price}>{Number(food.price).toLocaleString('en-US')}</span>
                         <span  content="TOOMAN">T</span>
                     </p>
                     <button onClick={(e) => { 

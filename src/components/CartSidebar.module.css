@@ -20,6 +20,13 @@
   src: url('../../public/assets/fonts/600-YekanBakh-Bold.woff');
   font-weight: 600;
 }
+@font-face {
+  font-family: 'Chopin';
+  src: url('../../public/assets/fonts/Chopin-Light.ttf');
+  font-weight: 200;
+  
+  
+}
 
 .sidebar {
   padding-top: 40px;
@@ -35,6 +42,10 @@
   flex-direction: column;
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
+}
+.englishFont{
+  font-family: "Chopin" !important;
+  font-weight: 800;
 }
 
 .sidebar.open {

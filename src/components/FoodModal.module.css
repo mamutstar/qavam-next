@@ -1,5 +1,12 @@
 @media (max-width: 768px) {
-.overlay {
+@font-face {
+  font-family: 'Chopin';
+  src: url('../../public/assets/fonts/Chopin-Light.ttf');
+  font-weight: 200;
+  
+  
+}
+  .overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -46,6 +53,10 @@ position: absolute;
     font-size: 18px;
     font-family: 'YekanBakhBold';
     color: #fcbe55;
+  }
+  .englishPrice{
+    font-family: "Chopin";
+    font-weight: 800;
   }
   .closeBtn{
     padding: 3px;
