@@ -29,13 +29,15 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+    position: fixed;
+    margin-top: 60px;
     
     height: fit-content;
     overflow-x: auto;
+    scrollbar-width: none;
     background: #F8F9FA;
     padding-top: 5px;
-    border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
+    
     
     
 }
@@ -48,7 +50,7 @@ background-color: aquamarine !important;
         height: 95px;
         margin-bottom: 5px;
         background-color: #F8F9FA;
-        border: 1px solid #122268;
+        border: 0.5px solid #000000;
         border-radius: 10px;
         flex: 0 0 auto;
         /* flex: 0 0 auto;
@@ -68,14 +70,24 @@ background-color: aquamarine !important;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -6px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
          img{
             width: 40px;
+            
          }
          p{
             font-family: 'YekanBakhThin';
+            color: rgb(0, 0, 0);
+            font-weight: 600;
          }
 
     }
     
     .menuCategoryContainer>button:nth-child(1){
       margin-left: 340px;
-      background-color: #fcbf5583;
+      
+    }
+    .active{
+      
+      background-color: #122268 !important;
+      p{
+        color: white !important;
+      }
     }

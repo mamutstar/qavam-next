@@ -12,6 +12,7 @@ export default function FoodMenu() {
   const [selectedFood, setSelectedFood] = useState(null);
   const [foods, setFoods] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  
 
   const [cart, setCart] = useState([]); // فقط همین
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -83,7 +84,7 @@ export default function FoodMenu() {
       />
 
       {/* دسته‌بندی */}
-      <MenuCategoryButtons onSelectCategory={setSelectedCategory} />
+      <MenuCategoryButtons onSelectCategory={setSelectedCategory} selectedCategory={selectedCategory} />
       <div className={styles.scrollOverflow}  >
       {/* لیست غذاها */}
       {filteredFoods.length > 0 ? (

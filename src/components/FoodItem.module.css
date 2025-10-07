@@ -94,7 +94,7 @@
     
     
     p{
-        color: #fcbe55;
+        color: rgba(0, 0, 0, 0.493);
         height: 40px;
         font-family: 'YekanBakhBold' ;
         font-feature-settings: "lnum"  !important;

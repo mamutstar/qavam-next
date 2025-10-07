@@ -2,8 +2,9 @@ import React, { useState ,useEffect } from 'react';
 import styles from './MenuCategoryButton.module.css'
 import { useSearchParams } from 'next/navigation';
 
-export default function MenuCategoryButton({ onSelectCategory,scrolled }) {
-scrolled=false
+export default function MenuCategoryButton({ onSelectCategory, selectedCategory }) {
+  
+
   const [language, setLanguage] = useState('fa'); // پیش‌فرض فارسی
       const searchParams = useSearchParams();
        useEffect(() => {
@@ -22,7 +23,7 @@ scrolled=false
     const drink = language === 'fa' ? "نوشیدنی" : "Drink";
 
     
-    console.log(scrolled);
+    
 
   return (
     // <div className={styles.menuCategoryContainer}>
@@ -52,29 +53,50 @@ scrolled=false
     //       </button>
 
     // </div>
-    <div   className={scrolled ? styles.menuCategoryContainerScrolled : styles.menuCategoryContainer} >
-      <button  onClick={() => onSelectCategory("persianFood")}>
-        <img src='/assets/images/logo/meal.svg'/>
+    <div   className={styles.menuCategoryContainer} >
+      <button  onClick={() => onSelectCategory("persianFood")}
+          className={selectedCategory === "persianFood" ? styles.active : ""}
+        >
+        <img src={selectedCategory === "persianFood" ? "/assets/images/logo/whitePersianFood2.svg" : "/assets/images/logo/meal.svg"} 
+        />
         <p>{persianFood}</p>
       </button>
-      <button onClick={() => onSelectCategory("seaFood")}>
-        <img src='/assets/images/logo/fish.svg'/>
+      <button onClick={() => onSelectCategory("seaFood")}
+        className={selectedCategory === "seaFood" ? styles.active : ""}
+        >
+        <img
+        src={selectedCategory === "seaFood" ? "/assets/images/logo/whiteFish2.svg" : "/assets/images/logo/fish.svg"}
+        />
         <p>{seaFood}</p>
       </button>
-      <button onClick={() => onSelectCategory("fastFood")}>
-        <img src='/assets/images/logo/hamburger.svg'/>
+      <button onClick={() => onSelectCategory("fastFood")}
+      className={selectedCategory === "fastFood" ? styles.active : ""}
+      
+        >
+        <img src={selectedCategory === "fastFood" ? "/assets/images/logo/whitehamburger2.svg" : "/assets/images/logo/hamburger.svg"}
+        />
         <p>{fastFood}</p>
       </button>
-      <button onClick={() => onSelectCategory("appetizer")}>
-        <img src='/assets/images/logo/hotdog.svg'/>
+      <button onClick={() => onSelectCategory("appetizer")}
+        className={selectedCategory === "appetizer" ? styles.active : ""}
+        >
+        <img  src={selectedCategory === "appetizer" ? "/assets/images/logo/whiteHotdog2.svg" : "/assets/images/logo/hotdog.svg"}
+         />
         <p>{appetizer}</p>
       </button>
-      <button onClick={() => onSelectCategory("dessert")}>
-        <img src='/assets/images/logo/cupcake.svg'/>
+      <button onClick={() => onSelectCategory("dessert")}
+        className={selectedCategory === "dessert" ? styles.active : ""}
+        >
+        <img   src={selectedCategory === "dessert" ? "/assets/images/logo/whiteCupcake2.svg" : "/assets/images/logo/cupcake.svg"}
+        
+        />
         <p>{desserts}</p>
       </button>
-      <button onClick={() => onSelectCategory("drink")}>
-        <img src='/assets/images/logo/cola.svg'/>
+      <button onClick={() => onSelectCategory("drink")}
+        className={selectedCategory === "drink" ? styles.active : ""}
+        >
+        <img src={selectedCategory === "drink" ? "/assets/images/logo/whiteCola2.svg" : "/assets/images/logo/cola.svg"}
+         />
         <p>{drink}</p>
       </button>
       
