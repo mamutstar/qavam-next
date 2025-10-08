@@ -775,6 +775,12 @@ export default function AdminDashboard() {
 
   // افزودن غذا
   async function addFood() {
+
+    // اعتبارسنجی ورودی‌ها
+  if (!newFood.name || !newFood.en_name || !newFood.price || !newFood.category) {
+    alert("لطفاً نام فارسی، نام انگلیسی، قیمت و دسته‌بندی را وارد کنید ❌");
+    return; // جلوی ارسال رو بگیر
+  }
     const formData = new FormData();
     formData.append("name", newFood.name);
     formData.append("en_name", newFood.en_name);

@@ -110,6 +110,7 @@ useEffect(() => {
       ) : filteredFoods.length > 0 ? (
         filteredFoods.map(food => (
           <FoodItem
+          className={styles.foodItemContainer}
             key={food.id}
             food={food}
             onClick={() => setSelectedFood(food)}

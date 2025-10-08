@@ -22,6 +22,8 @@
   
   
 }
+
+@media (max-width: 768px) {
 .menuCategoryContainer{
   
     width: 100%;
@@ -90,4 +92,81 @@ background-color: aquamarine !important;
       p{
         color: white !important;
       }
+    }
+  }
+
+    @media (min-width: 768px) and (max-width: 2400px) {
+      .menuCategoryContainer{
+  
+    width: 50vw;
+    flex-wrap: wrap;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    gap: 10px;
+    
+    
+    
+    height: fit-content;
+    overflow-x: auto;
+    scrollbar-width: none;
+    background: #F8F9FA;
+    padding-top: 5px;
+    
+    
+    
+}
+.menuCategoryContainerScrolled{
+background-color: aquamarine !important;
+}
+
+.menuCategoryContainer>button{
+        width: 15%;
+        height: 95px;
+        margin-bottom: 5px;
+        background-color: #F8F9FA;
+        border: 0.5px solid #000000;
+        border-radius: 10px;
+        flex: 0 0 auto;
+        /* flex: 0 0 auto;
+        width: 95px;
+        height: 95px;
+        margin-bottom: 5px;
+        background-color: #F8F9FA;
+        border: 1px solid white;
+        border-radius: 10px; */
+
+
+
+
+        /* -webkit-box-shadow: 2px 10px 24px 1px rgba(182, 182, 182, 0.39); 
+        box-shadow: 2px 10px 24px 1px rgba(182, 182, 182, 0.39); */
+        /* box-shadow: rgba(125, 130, 135, 0.3) 0px 1px 2px 0px, rgba(125, 130, 135, 0.15) 0px 2px 6px 2px; */
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -6px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+         img{
+            width: 40px;
+            
+         }
+         p{
+            font-family: 'YekanBakhThin';
+            color: rgb(0, 0, 0);
+            font-weight: 600;
+         }
+
+    }
+    
+    .menuCategoryContainer>button:nth-child(1){
+      
+      
+    }
+    .active{
+      
+      background-color: #122268 !important;
+      p{
+        color: white !important;
+      }
+    }
     }

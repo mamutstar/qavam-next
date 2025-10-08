@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import styles from "@/app/login/loginPage.module.css";
 
 export default function AdminLogin() {
   const [username, setUsername] = useState("");
@@ -25,7 +26,7 @@ export default function AdminLogin() {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <div className={styles.loginInputContainer}  style={{ padding: "2rem" }}>
       <h2>ورود ادمین</h2>
       <form onSubmit={handleLogin}>
         <input
