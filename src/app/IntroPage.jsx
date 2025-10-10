@@ -12,7 +12,7 @@ import locationIcon from '../../public/assets/images/logo/whiteLocation.svg'
 
 export default function IntroPage() {
   return (
-    <div>
+    <div className={styles.parentContainer}>
       <ul className={styles.topNavBar}>
         <li> <Link href="/">Home</Link></li>
         <li><Link href="#">About us</Link></li>

@@ -35,14 +35,20 @@
         radial-gradient(at 47% 33%, hsl(228.84, 70%, 24%) 0, transparent 59%), 
         radial-gradient(at 82% 65%, hsl(37.72, 97%, 66%) 0, transparent 55%);
 } */
+ .parentContainer{
+  background-image: url('../../public/siz-islam-Zt1Ff3VlLcU-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+ }
 .topNavBar{
   text-decoration: none;
-  font-family: 'YekanBakhThin';
+  font-family: 'YekanBakhRegular';
   color: white;
   list-style: none;
   display: flex;
   padding: 0;
-  padding-top: 10px;
+  padding-top: 30px;
   justify-content: center;
   align-items: start;
   gap: 15px;
@@ -54,7 +60,7 @@
     width: 80vw;
     max-width: 400px;
     height: 80vh;
-     backdrop-filter: blur(19px) saturate(200%);
+     backdrop-filter: blur(7px) saturate(200%);
     -webkit-backdrop-filter: blur(19px) saturate(180%);
     background-color: rgba(17, 25, 40, 0.42);
     border-radius: 12px;
