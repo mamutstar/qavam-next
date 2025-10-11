@@ -47,7 +47,7 @@ export default function IntroPage() {
 
       </div>
 
-      <div className={styles.workInfoContainer}>
+      {/* <div className={styles.workInfoContainer}>
         <div><img className={styles.timeLocIcon} src='/assets/images/logo/whiteStopWatch.svg'/>
         <div className={styles.dinnerLunchContainer}>
           <div><p>dinner<br/>11:30 to 16:00</p></div>
@@ -59,9 +59,20 @@ export default function IntroPage() {
           <p>Adress<br/>Old City Structure, Bushehr, Bushehr Province, Iran</p>
 
         </div>
+
+        </div>
+      </div> */}
+      {/* <h2 className={styles.qavamMessage}>طعمی به اصالت <br></br>دریا</h2> */}
+      <img className={styles.qavamMessage} src='/assets/images/logo/whiteLineVector.png'></img>
+      <div className={styles.folowUsCotainer}>
+        <h4>FOLLOW US</h4>
+        <div className={styles.followUsIconContainer}>
+          
+          <a href="https://wa.me/989174000034" target="_blank"><img src='/assets/images/logo/whiteWhatsAppIcon.svg'></img></a>
+          <a href="geo:28.98669639134926, 50.82755359796483"><img src='/assets/images/logo/whiteLocationIcon.svg'></img></a>
+          <a href='https://www.instagram.com/restaurant_ghavam?igsh=MWVqd3M1Mnd2emRwZA=='><img src='/assets/images/logo/whiteInstagramThinIcon.svg'></img></a>
         </div>
       </div>
-
     </div>
     
     </div>
