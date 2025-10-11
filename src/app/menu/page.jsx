@@ -97,7 +97,7 @@ useEffect(() => {
       {/* هدر */}
       <img
         className={styles.qavamHeaderImg}
-        src='/assets/images/logo/qavamHeaderPoster3.png'
+        src='/assets/images/logo/qavamHeaderPoster2.png'
         alt="Header Poster"
       />
 

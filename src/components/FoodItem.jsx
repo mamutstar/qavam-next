@@ -23,22 +23,22 @@ FoodItem ({ food, onClick , onAddToCart , isFixed}) {
   }, [searchParams]);
 
 
-  const [scrolled, setScrolled] = useState(false);
+  // const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) { // مثلا وقتی 200px اسکرول شد
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 50) { // مثلا وقتی 200px اسکرول شد
+  //       setScrolled(true);
+  //     } else {
+  //       setScrolled(false);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    // پاک کردن eventListener وقتی کامپوننت از بین میره
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   // پاک کردن eventListener وقتی کامپوننت از بین میره
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
     
   const displayName = language === 'fa' ? food.name : food.en_name;
   const displayDescription = language === 'fa' ? food.description : food.en_description;
@@ -48,7 +48,7 @@ FoodItem ({ food, onClick , onAddToCart , isFixed}) {
   };
   return (
     <div >
-        <div className={`${styles.foodItemContainer} ${language === 'fa' ? styles.rtlDirection : ""}`}  onClick={onClick} scrolled={scrolled}>
+        <div className={`${styles.foodItemContainer} ${language === 'fa' ? styles.rtlDirection : ""}`}  onClick={onClick} >
             <div className={styles.foodImgContainer}>
                 <img src={food.image}/>
             </div>
