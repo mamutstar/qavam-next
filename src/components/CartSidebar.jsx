@@ -3,6 +3,7 @@
 //  import { useSearchParams } from 'next/navigation';
  import styles from './CartSidebar.module.css';
  import { useLang } from "@/hooks/useLang";
+ 
 
 
 export default function CartSidebar({ isOpen, onClose, cartItems, updateQuantity }) {

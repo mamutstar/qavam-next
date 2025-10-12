@@ -7,6 +7,7 @@ import FoodItem from '../../components/FoodItem';
 import NoteBook from '../../components/BottomNoteBook';
 import FoodModal from "../../components/FoodModal";
 import CartSidebar from "../../components/CartSidebar";
+import { Suspense } from "react";
 
 export default function FoodMenu() {
   const [selectedFood, setSelectedFood] = useState(null);
@@ -102,13 +103,16 @@ useEffect(() => {
       />
 
       {/* دسته‌بندی */}
+      <Suspense fallback={<div>در حال بارگذاری زبان...</div>}>
       <MenuCategoryButtons onSelectCategory={setSelectedCategory} selectedCategory={selectedCategory} />
+      </Suspense>
       
  
       <div className={styles.scrollOverflow}  >
       {loading ? (  <div className={styles.loader}><img src='/assets/images/logo/lineVector.svg'/></div>
       ) : filteredFoods.length > 0 ? (
         filteredFoods.map(food => (
+          <Suspense fallback={<div>در حال بارگذاری زبان...</div>}>
           <FoodItem
           className={styles.foodItemContainer}
             key={food.id}
@@ -116,6 +120,7 @@ useEffect(() => {
             onClick={() => setSelectedFood(food)}
             onAddToCart={addToCart}
           />
+          </Suspense>
         ))
       ) : (
         <p className={styles.noItemsText}>
@@ -133,19 +138,23 @@ useEffect(() => {
       
        
       {/* مودال غذا */}
+      <Suspense fallback={<div>در حال بارگذاری زبان...</div>}>
       <FoodModal 
       food={selectedFood} 
       onClose={() => setSelectedFood(null)}
       onAddToCart={addToCart}
       />
+      </Suspense>
 
       {/* سایدبار سبد خرید */}
+      <Suspense fallback={<div>در حال بارگذاری زبان...</div>}>
       <CartSidebar
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         cartItems={cart}
         updateQuantity={updateQuantity}
       />
+      </Suspense>
     </div>
   );
   
