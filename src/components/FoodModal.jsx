@@ -3,19 +3,21 @@ import React, { useState ,useEffect } from 'react';
 import styles from "./FoodModal.module.css";
 import CloseBtn from "../../public/assets/images/logo/close.svg"
 import { useSearchParams } from 'next/navigation';
+import { useLang } from "@/hooks/useLang";
 
 
 export default function FoodModal({ food, onClose , onAddToCart}) {
   if (!food) return null; // اگه غذایی انتخاب نشده مودال نشون نده
-  const [language, setLanguage] = useState('fa'); // پیش‌فرض فارسی
-    const searchParams = useSearchParams();
-     useEffect(() => {
-    // گرفتن query lang از URL
-    const lang = searchParams.get('lang'); // ?lang=en یا ?lang=fa
-    if (lang === 'en' || lang === 'fa') {
-      setLanguage(lang);
-    }
-  }, [searchParams]);
+  // const [language, setLanguage] = useState('fa'); // پیش‌فرض فارسی
+  const language = useLang();
+  //   const searchParams = useSearchParams();
+  //    useEffect(() => {
+  //   // گرفتن query lang از URL
+  //   const lang = searchParams.get('lang'); // ?lang=en یا ?lang=fa
+  //   if (lang === 'en' || lang === 'fa') {
+  //     setLanguage(lang);
+  //   }
+  // }, [searchParams]);
   const displayName = language === 'fa' ? food.name : food.en_name;
   const displayDescription = language === 'fa' ? food.description : food.en_description;
   const addOrder = language === 'fa' ? "افزودن" : "Add To Order";

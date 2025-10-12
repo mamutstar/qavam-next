@@ -1,6 +1,6 @@
  "use client";
  import React, { useState ,useEffect } from 'react';
- import { useSearchParams } from 'next/navigation';
+//  import { useSearchParams } from 'next/navigation';
  import styles from './CartSidebar.module.css';
  import { useLang } from "@/hooks/useLang";
 

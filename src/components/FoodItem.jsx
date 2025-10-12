@@ -4,7 +4,8 @@ import React, { useState ,useEffect } from 'react';
 import styles from './FoodItem.module.css'
 // import FoodItem1 from '../assets/images/foodImage/anh-nguyen-kcA-c3f_3FE-unsplash.jpg'
 import FoodModal from './FoodModal'
-import { useSearchParams } from 'next/navigation'; // اگر پروژه‌ی شما Next.js است
+// import { useSearchParams } from 'next/navigation'; 
+import { useLang } from "@/hooks/useLang";
 
 // اگر React معمولی هست، از window.location.search استفاده می‌کنیم
 
@@ -13,15 +14,16 @@ import { useSearchParams } from 'next/navigation'; // اگر پروژه‌ی ش�
 FoodItem ({ food, onClick , onAddToCart , isFixed}) {
 
     const [selectedFood, setSelectedFood] = useState(null);
-    const [language, setLanguage] = useState('fa'); // پیش‌فرض فارسی
-    const searchParams = useSearchParams();
-     useEffect(() => {
-    // گرفتن query lang از URL
-    const lang = searchParams.get('lang'); // ?lang=en یا ?lang=fa
-    if (lang === 'en' || lang === 'fa') {
-      setLanguage(lang);
-    }
-  }, [searchParams]);
+    // const [language, setLanguage] = useState('fa'); // پیش‌فرض فارسی
+    const language = useLang();
+  //   const searchParams = useSearchParams();
+  //    useEffect(() => {
+  //   // گرفتن query lang از URL
+  //   const lang = searchParams.get('lang'); // ?lang=en یا ?lang=fa
+  //   if (lang === 'en' || lang === 'fa') {
+  //     setLanguage(lang);
+  //   }
+  // }, [searchParams]);
 
 
   // const [scrolled, setScrolled] = useState(false);

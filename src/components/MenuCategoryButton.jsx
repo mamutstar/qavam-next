@@ -1,20 +1,22 @@
 "use client";
 import React, { useState ,useEffect } from 'react';
 import styles from './MenuCategoryButton.module.css'
-import { useSearchParams } from 'next/navigation';
+// import { useSearchParams } from 'next/navigation';
+import { useLang } from "@/hooks/useLang";
 
 export default function MenuCategoryButton({ onSelectCategory, selectedCategory }) {
   
 
-  const [language, setLanguage] = useState('fa'); // پیش‌فرض فارسی
-      const searchParams = useSearchParams();
-       useEffect(() => {
-      // گرفتن query lang از URL
-      const lang = searchParams.get('lang'); // ?lang=en یا ?lang=fa
-      if (lang === 'en' || lang === 'fa') {
-        setLanguage(lang);
-      }
-    }, [searchParams]);
+  // const [language, setLanguage] = useState('fa'); // پیش‌فرض فارسی
+  const language = useLang();
+    //   const searchParams = useSearchParams();
+    //    useEffect(() => {
+    //   // گرفتن query lang از URL
+    //   const lang = searchParams.get('lang'); // ?lang=en یا ?lang=fa
+    //   if (lang === 'en' || lang === 'fa') {
+    //     setLanguage(lang);
+    //   }
+    // }, [searchParams]);
 
     const persianFood = language === 'fa' ? "غذای ایرانی" : "Persian Food";
     const seaFood = language === 'fa' ? "غذای دریایی" : "Sea Food";
