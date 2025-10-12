@@ -2,13 +2,7 @@ import React from 'react'
 import Link from 'next/link';
 import styles from './IntroPage.module.css'
 
-import logo from '../../public/assets/images/logo/whiteLogo.svg'
-import logoTypeFa from '../../public/assets/images/logo/whitePersianLogoType.svg';
-import logoTypeEn from '../../public/assets/images/logo/whiteEnglishLogoType.svg';
-import EnglishFlag from '../../public/assets/england.svg'
-import IranFlag from '../../public/assets/iran.svg'
-import openTimeIcon from '../../public/assets/images/logo/whiteStopWatch.svg'
-import locationIcon from '../../public/assets/images/logo/whiteLocation.svg'
+
 
 export default function IntroPage() {
   return (

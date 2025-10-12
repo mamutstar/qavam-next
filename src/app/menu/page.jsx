@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import styles from './FoodMenu.module.css';
-import QavamHeaderPoster from '../../../public/assets/images/logo/qavamHeaderPoster2.png';
+
 import MenuCategoryButtons from '../../components/MenuCategoryButton';
 import FoodItem from '../../components/FoodItem';
 import NoteBook from '../../components/BottomNoteBook';
