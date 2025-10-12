@@ -7,15 +7,15 @@ import styles from './IntroPage.module.css'
 export default function IntroPage() {
   return (
     <div className={styles.parentContainer}>
+      
+    <div className={styles.introGlassCard}>
+      
       <ul className={styles.topNavBar}>
         <li> <Link href="/">Home</Link></li>
         <li><Link href="#">About us</Link></li>
         <li><Link href="#">Contact us</Link></li>
         <li><Link href="#">Menu</Link></li>
       </ul>
-    <div className={styles.introGlassCard}>
-      
-      
       <div className={styles.qavamLogoContainer}>
         <img className={styles.qavamLogo} src='/assets/images/logo/whiteLogo.svg'/>
         <img className={styles.qavamLogo} src='/assets/images/logo/whitePersianLogoType.svg'/>

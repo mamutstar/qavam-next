@@ -35,20 +35,31 @@
         radial-gradient(at 47% 33%, hsl(228.84, 70%, 24%) 0, transparent 59%), 
         radial-gradient(at 82% 65%, hsl(37.72, 97%, 66%) 0, transparent 55%);
 } */
+ 
  .parentContainer{
-  background-image: url('../../public/kevin-charit-QusXD31z0G4-unsplash.jpg');
+  background-image: url('../../public/assets/images/logo/qavamBackgroun2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  
+  height: 100vh !important;
+  padding-top: 30px;
  }
 .topNavBar{
+  
+
+   
+    
+  max-width: 80vw;
+  margin: 0 auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   text-decoration: none;
   font-family: 'YekanBakhRegular';
   color: white;
   list-style: none;
   display: flex;
   padding: 0;
-  padding-top: 30px;
+  padding-top: 10px;
   justify-content: center;
   align-items: start;
   gap: 15px;
@@ -57,6 +68,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  
     width: 80vw;
     max-width: 400px;
     height: 80vh;
