@@ -1,3 +1,4 @@
+"use client";
 import React, { useState ,useEffect } from 'react';
 import styles from './MenuCategoryButton.module.css'
 import { useSearchParams } from 'next/navigation';

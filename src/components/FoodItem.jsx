@@ -1,4 +1,5 @@
 
+"use client";
 import React, { useState ,useEffect } from 'react';
 import styles from './FoodItem.module.css'
 // import FoodItem1 from '../assets/images/foodImage/anh-nguyen-kcA-c3f_3FE-unsplash.jpg'

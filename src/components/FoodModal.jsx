@@ -1,3 +1,4 @@
+"use client";
 import React, { useState ,useEffect } from 'react';
 import styles from "./FoodModal.module.css";
 import CloseBtn from "../../public/assets/images/logo/close.svg"
