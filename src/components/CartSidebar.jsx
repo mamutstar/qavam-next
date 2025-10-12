@@ -2,21 +2,16 @@
  import React, { useState ,useEffect } from 'react';
  import { useSearchParams } from 'next/navigation';
  import styles from './CartSidebar.module.css';
-
+ import { useLang } from "@/hooks/useLang";
 
 
 export default function CartSidebar({ isOpen, onClose, cartItems, updateQuantity }) {
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
-  const [language, setLanguage] = useState('fa'); // پیش‌فرض فارسی
-    const searchParams = useSearchParams();
-     useEffect(() => {
-    // گرفتن query lang از URL
-    const lang = searchParams.get('lang'); // ?lang=en یا ?lang=fa
-    if (lang === 'en' || lang === 'fa') {
-      setLanguage(lang);
-    }
-  }, [searchParams]);
+  const language = useLang();
+
+  // 
+  
   
   
 
