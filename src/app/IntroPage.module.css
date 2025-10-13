@@ -20,6 +20,13 @@
   
   
 }
+@font-face {
+  font-family: 'Manelli';
+  src: url('../../public/assets/fonts/maneli.ttf');
+  font-weight: 200;
+  
+  
+}
 @media (max-width: 768px) {
   
   /* استایل مخصوص موبایل خیلی کوچک */
@@ -42,6 +49,7 @@
   background-size: cover;
   
   height: 100vh !important;
+  
   padding-top: 30px;
  }
 .topNavBar{
@@ -72,7 +80,8 @@
     width: 80vw;
     max-width: 400px;
     height: 80vh;
-     backdrop-filter: blur(7px) saturate(200%);
+    
+     backdrop-filter: blur(9px) saturate(200%);
     -webkit-backdrop-filter: blur(19px) saturate(180%);
     background-color: rgba(17, 25, 40, 0.42);
     border-radius: 12px;
@@ -227,8 +236,25 @@
   }
 }
 .qavamMessage{
-  opacity: 60%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  font-family: "Manelli";
+  font-weight: 400;
+  color: #fcbe55;
+  text-align: center;
+  width: 21ch; /* طول متن (به تعداد کاراکتر) */
+  white-space: nowrap;
+  overflow: hidden;
+  
+  animation: typing 1s steps(21) forwards, .1s  infinite;
 }
+@keyframes typing {
+  from { width: 0 }
+  to { width: 21ch }
+}
+
+
 .folowUsCotainer{
   margin-top: auto;
   
@@ -454,6 +480,24 @@
     opacity: 40%;
 
   }
+}
+.qavamMessage{
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  font-family: "Manelli";
+  font-weight: 400;
+  color: #fcbe55;
+  text-align: center;
+  width: 21ch; /* طول متن (به تعداد کاراکتر) */
+  white-space: nowrap;
+  overflow: hidden;
+  
+  animation: typing 1s steps(21) forwards, .1s  infinite;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 21ch }
 }
   /* استایل تبلت */
 }

@@ -8,6 +8,9 @@ import NoteBook from '../../components/BottomNoteBook';
 import FoodModal from "../../components/FoodModal";
 import CartSidebar from "../../components/CartSidebar";
 import { Suspense } from "react";
+import Head from "next/head";
+
+
 
 export default function FoodMenu() {
   const [selectedFood, setSelectedFood] = useState(null);
@@ -94,6 +97,10 @@ useEffect(() => {
   
 
   return (
+    <>
+    <Head>
+        <title>منو رستوران قوام</title>
+    </Head>
     <div className={styles.bodyy}>
       {/* هدر */}
       <img
@@ -156,6 +163,7 @@ useEffect(() => {
       />
       </Suspense>
     </div>
+    </>
   );
   
 }

@@ -2,7 +2,9 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import IntroPage from "@/app/IntroPage"
 
-
+export const metadata = {
+  title: "رستوران قوام",
+};
 export default function Home() {
   return (
     <IntroPage></IntroPage>

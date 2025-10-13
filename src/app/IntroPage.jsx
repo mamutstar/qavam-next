@@ -3,7 +3,9 @@ import Link from 'next/link';
 import styles from './IntroPage.module.css'
 
 
-
+export const metadata = {
+  title: "درباره ما - سایت من",
+};
 export default function IntroPage() {
   return (
     <div className={styles.parentContainer}>
@@ -13,8 +15,8 @@ export default function IntroPage() {
       <ul className={styles.topNavBar}>
         <li> <Link href="/">Home</Link></li>
         <li><Link href="#">About us</Link></li>
-        <li><Link href="#">Contact us</Link></li>
-        <li><Link href="#">Menu</Link></li>
+        <li><Link href="#followUs">Contact us</Link></li>
+        <li><Link href="/menu?lang=fa">Menu</Link></li>
       </ul>
       <div className={styles.qavamLogoContainer}>
         <img className={styles.qavamLogo} src='/assets/images/logo/whiteLogo.svg'/>
@@ -57,10 +59,13 @@ export default function IntroPage() {
         </div>
       </div> */}
       {/* <h2 className={styles.qavamMessage}>طعمی به اصالت <br></br>دریا</h2> */}
-      <img className={styles.qavamMessage} src='/assets/images/logo/whiteLineVector.png'></img>
+      {/* <img className={styles.qavamMessage} src='/assets/images/logo/whiteLineVector.png'></img> */}
+
+      <p className={styles.qavamMessage}>مزه اصالت، در قلب سنت</p>
+      
       <div className={styles.folowUsCotainer}>
         <h4>FOLLOW US</h4>
-        <div className={styles.followUsIconContainer}>
+        <div className={styles.followUsIconContainer} id='followUS'>
           
           <a href="https://wa.me/989174000034" target="_blank"><img src='/assets/images/logo/whiteWhatsAppIcon.svg'></img></a>
           <a href="geo:28.98669639134926, 50.82755359796483"><img src='/assets/images/logo/whiteLocationIcon.svg'></img></a>
