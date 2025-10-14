@@ -9,6 +9,9 @@ import FoodModal from "../../components/FoodModal";
 import CartSidebar from "../../components/CartSidebar";
 import { Suspense } from "react";
 import Head from "next/head";
+import { useTransition } from "react";
+
+
 
 
 
@@ -21,7 +24,20 @@ export default function FoodMenu() {
   const [cart, setCart] = useState([]); // فقط همین
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-  
+
+  const [isPending, startTransition] = useTransition();
+
+  const handleSelectCategory = (category) => {
+    // فوری برای تغییر استایل دکمه
+    setSelectedCategory(category);
+
+    // ترنزیشن برای محاسبات یا فیلتر
+    startTransition(() => {
+      // اینجا محاسبات یا فیلتر دیتا انجام میشه
+      // مثلا fetch غذاها یا sort
+      console.log("Filtering foods for:", category);
+    });
+  };
 
   // --- بارگذاری اولیه از localStorage ---
   useEffect(() => {
@@ -111,7 +127,8 @@ useEffect(() => {
 
       {/* دسته‌بندی */}
       <Suspense fallback={<div>در حال بارگذاری زبان...</div>}>
-      <MenuCategoryButtons onSelectCategory={setSelectedCategory} selectedCategory={selectedCategory} />
+      <MenuCategoryButtons onSelectCategory={handleSelectCategory} selectedCategory={selectedCategory} />
+      {isPending && <p>در حال بارگذاری غذاها...</p>}
       </Suspense>
       
  

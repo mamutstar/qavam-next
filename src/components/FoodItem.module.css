@@ -119,6 +119,7 @@ direction: rtl;
         border-radius: 15px;
         width: 250px;
         height: 40px;
+        font-family: "YekanBakhRegular";
     }
 }
 .rtl {

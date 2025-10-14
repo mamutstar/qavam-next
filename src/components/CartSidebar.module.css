@@ -162,3 +162,6 @@
 .checkoutBtn:hover {
   background: #0d1a4a;
 }
+.emptyOrder{
+  font-family: "YekanBakhRegular" !important;
+}

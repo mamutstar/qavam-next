@@ -48,7 +48,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   
-  height: 100vh !important;
+  height: 100vh ;
+  
   
   padding-top: 30px;
  }
@@ -81,7 +82,7 @@
     max-width: 400px;
     height: 80vh;
     
-     backdrop-filter: blur(9px) saturate(200%);
+     backdrop-filter: blur(11px) saturate(200%);
     -webkit-backdrop-filter: blur(19px) saturate(180%);
     background-color: rgba(17, 25, 40, 0.42);
     border-radius: 12px;
@@ -166,7 +167,7 @@
     }
     
 }
-.workInfoContainer{
+/* .workInfoContainer{
   color: white;
   display: flex;
   flex-direction: row;
@@ -188,22 +189,22 @@
           img{
             width: 25px;
             opacity: 50%;
-            /* display: inline-block; */
+            
             animation: shake 0.5s infinite;
           }
           
           
-    }
-    @keyframes shake {
+    } */
+    /* @keyframes shake {
   0% { transform: translate(0, 0) rotate(0); }
   20% { transform: translate(-2px, 0) rotate(-2deg); }
   40% { transform: translate(2px, 0) rotate(2deg); }
   60% { transform: translate(-2px, 0) rotate(-2deg); }
   80% { transform: translate(2px, 0) rotate(2deg); }
   100% { transform: translate(0, 0) rotate(0); }
-}
+} */
     
-.dinnerLunchContainer{
+/* .dinnerLunchContainer{
   padding-top: 3px;
   font-family: 'YekanBakhThin';
   display: flex;
@@ -225,7 +226,7 @@
     padding: 0 !important;
     text-align: center;
   
-}
+} */
 .adressContainer{
   display: flex;
   font-family: 'YekanBakhThin';

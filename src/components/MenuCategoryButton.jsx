@@ -76,7 +76,7 @@ export default function MenuCategoryButton({ onSelectCategory, selectedCategory 
       className={selectedCategory === "fastFood" ? styles.active : ""}
       
         >
-        <img src={selectedCategory === "fastFood" ? "/assets/images/logo/whitehamburger2.svg" : "/assets/images/logo/hamburger.svg"}
+        <img src={selectedCategory === "fastFood" ? "/assets/images/logo/whiteHamburger2.svg" : "/assets/images/logo/hamburger.svg"}
         />
         <p>{fastFood}</p>
       </button>

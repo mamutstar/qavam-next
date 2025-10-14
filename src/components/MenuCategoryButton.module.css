@@ -32,7 +32,7 @@
     justify-content: center;
     gap: 10px;
     position: fixed;
-    margin-top: 135px;
+    margin-top: 36%;
     
     height: fit-content;
     overflow-x: auto;
@@ -83,8 +83,11 @@ background-color: aquamarine !important;
     }
     
     .menuCategoryContainer>button:nth-child(1){
-      margin-left: 340px;
+      margin-left: 100%;
       
+    }
+    .menuCategoryContainer>button:last-child{
+      margin-right: 20px;
     }
     .active{
       
