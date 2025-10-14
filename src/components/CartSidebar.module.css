@@ -27,6 +27,7 @@
   
   
 }
+@media (max-width: 768px) {
 
 .sidebar {
   padding-top: 40px;
@@ -164,4 +165,183 @@
 }
 .emptyOrder{
   font-family: "YekanBakhRegular" !important;
+}
+.emptyBasketContainer{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30%;
+  width: 100%;
+  height: auto;
+  
+  img{
+    width: 200px;
+  }
+  p{
+    font-family: "YekanBakhBold";
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.456);
+  }
+}
+}
+
+@media (min-width: 768px) and (max-width: 2400px) {
+.sidebar {
+  padding-top: 40px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%); /* پیش‌فرض بسته */
+  width: 320px;
+  height: 85vh;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+.englishFont{
+  font-family: "Chopin" !important;
+  font-weight: 800;
+}
+
+.sidebar.open {
+  transform: translateX(0); /* باز شود */
+}
+
+.closeBtn {
+  align-self: flex-start;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.cartList {
+  flex: 1; /* بخش میانی قابل اسکرول */
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.cartItem {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  padding: 10px;
+  background-color: #FAFBFC;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 6px -1px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.cartItem img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cartInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cartItem h4 {
+  font-family: "YekanBakhBold";
+  margin: 0;
+  font-size: 15px;
+}
+.cartItem p {
+  font-family: "YekanBakhRegular";
+  font-size: 13px;
+  margin: 3px 0 0;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity button {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f3f3f3;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.quantity span {
+  font-family: "YekanBakhRegular";
+  font-size: 14px;
+}
+
+.totalSection {
+  
+  border-top: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+}
+
+.totalPrice {
+  font-family: "YekanBakhBold";
+  font-size: 18px;
+  color: #fcbe55;
+  margin-bottom: 10px;
+}
+
+.checkoutBtn {
+  width: 100%;
+  background: #122268;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "YekanBakhBold";
+  transition: background 0.2s ease;
+}
+
+.checkoutBtn:hover {
+  background: #0d1a4a;
+}
+.emptyOrder{
+  font-family: "YekanBakhRegular" !important;
+}
+.emptyBasketContainer{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30%;
+  width: 100%;
+  height: auto;
+  
+  img{
+    width: 200px;
+  }
+  p{
+    font-family: "YekanBakhBold";
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.456);
+  }
+}
 }

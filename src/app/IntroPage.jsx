@@ -13,10 +13,10 @@ export default function IntroPage() {
     <div className={styles.introGlassCard}>
       
       <ul className={styles.topNavBar}>
-        <li> <Link href="/">Home</Link></li>
-        <li><Link href="#">About us</Link></li>
-        <li><Link href="#followUs">Contact us</Link></li>
-        <li><Link href="/menu?lang=fa">Menu</Link></li>
+        <li> <Link href="/">خانه</Link></li>
+        <li><Link href="#">درباره ما</Link></li>
+        <li><Link href="#followUs">ارتباط با ما</Link></li>
+        <li><Link href="/menu?lang=fa">منو</Link></li>
       </ul>
       <div className={styles.qavamLogoContainer}>
         <img className={styles.qavamLogo} src='/assets/images/logo/whiteLogo.svg'/>

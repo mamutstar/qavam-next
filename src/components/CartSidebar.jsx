@@ -22,7 +22,10 @@ export default function CartSidebar({ isOpen, onClose, cartItems, updateQuantity
       
       <div className={styles.cartList}>
         {cartItems.length === 0 ? (
-          <p>سبد خرید خالی است</p>
+          <div className={styles.emptyBasketContainer}>
+          <p>{language === 'en' ? "Empty Order" : "سفارشی ندارید"}</p>
+          <img src='/assets/images/logo/emptyBasket2.svg'/>
+          </div>
         ) : (
           cartItems.map(item => (
             <div key={item.id} className={styles.cartItem}>

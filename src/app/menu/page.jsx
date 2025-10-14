@@ -147,9 +147,13 @@ useEffect(() => {
           </Suspense>
         ))
       ) : (
-        <p className={styles.noItemsText}>
-          آیتمی موجود نیست، لطفاً دسته دیگری انتخاب کنید.
-        </p>
+
+        
+        
+          
+        <img className={styles.spoonImage} src='/assets/images/logo/forkAndSpoon2.svg'></img>
+          
+        
       )}
         </div>
       {/* دکمه پایین صفحه */}

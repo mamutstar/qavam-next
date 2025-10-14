@@ -76,7 +76,7 @@ export default function MenuCategoryButton({ onSelectCategory, selectedCategory 
       className={selectedCategory === "fastFood" ? styles.active : ""}
       
         >
-        <img src={selectedCategory === "fastFood" ? "/assets/images/logo/whiteHamburger2.svg" : "/assets/images/logo/hamburger.svg"}
+        <img src={selectedCategory === "fastFood" ? "/assets/images/logo/whiteHamburger4.svg" : "/assets/images/logo/hamburger.svg"}
         />
         <p>{fastFood}</p>
       </button>
@@ -87,14 +87,14 @@ export default function MenuCategoryButton({ onSelectCategory, selectedCategory 
          />
         <p>{appetizer}</p>
       </button>
-      <button onClick={() => onSelectCategory("dessert")}
+      {/* <button onClick={() => onSelectCategory("dessert")}
         className={selectedCategory === "dessert" ? styles.active : ""}
         >
         <img   src={selectedCategory === "dessert" ? "/assets/images/logo/whiteCupcake2.svg" : "/assets/images/logo/cupcake.svg"}
         
         />
         <p>{desserts}</p>
-      </button>
+      </button> */}
       <button onClick={() => onSelectCategory("drink")}
         className={selectedCategory === "drink" ? styles.active : ""}
         >

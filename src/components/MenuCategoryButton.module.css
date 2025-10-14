@@ -78,17 +78,21 @@ background-color: aquamarine !important;
             font-family: 'YekanBakhThin';
             color: rgb(0, 0, 0);
             font-weight: 600;
+            user-select: none;
          }
+         
 
     }
     
     .menuCategoryContainer>button:nth-child(1){
-      margin-left: 100%;
+      margin-left: 68%;
       
     }
     .menuCategoryContainer>button:last-child{
       margin-right: 20px;
     }
+    
+    
     .active{
       
       background-color: #122268 !important;
