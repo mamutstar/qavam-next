@@ -292,6 +292,10 @@
 
   }
 }
+.locationIcon{
+  width: 25px;
+    opacity: 40%;
+}
 }
 @media (min-width: 768px) and (max-width: 2400px) {
 

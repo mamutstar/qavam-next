@@ -1,12 +1,19 @@
+
 import React from 'react'
 import Link from 'next/link';
 import styles from './IntroPage.module.css'
+import MapLink from "@/components/MapLink";
 
 
 export const metadata = {
   title: "درباره ما - سایت من",
 };
+
+
+
 export default function IntroPage() {
+
+  
   return (
     <div className={styles.parentContainer}>
       
@@ -68,7 +75,7 @@ export default function IntroPage() {
         <div className={styles.followUsIconContainer} id='followUS'>
           
           <a href="https://wa.me/989174000034" target="_blank"><img src='/assets/images/logo/whiteWhatsAppIcon.svg'></img></a>
-          <a href="geo:28.98669639134926, 50.82755359796483"><img src='/assets/images/logo/whiteLocationIcon.svg'></img></a>
+          <MapLink> </MapLink>
           <a href='https://www.instagram.com/restaurant_ghavam?igsh=MWVqd3M1Mnd2emRwZA=='><img src='/assets/images/logo/whiteInstagramThinIcon.svg'></img></a>
         </div>
       </div>
