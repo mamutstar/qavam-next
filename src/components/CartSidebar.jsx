@@ -7,9 +7,11 @@
 
 
 export default function CartSidebar({ isOpen, onClose, cartItems, updateQuantity }) {
-  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity*1.1, 0);
 
   const language = useLang();
+
+  const percentMessage = language === 'fa' ? "این مبلغ با احتساب ۱۰ درصد ارزش افزوده میباشد" : "This amount includes 10% value added.";
 
   // 
   
@@ -24,7 +26,7 @@ export default function CartSidebar({ isOpen, onClose, cartItems, updateQuantity
         {cartItems.length === 0 ? (
           <div className={styles.emptyBasketContainer}>
           <p>{language === 'en' ? "Empty Order" : "سفارشی ندارید"}</p>
-          <img src='/assets/images/logo/emptyBasket2.svg'/>
+          <img src='/assets/images/logo/blueEmptyBasket.svg'/>
           </div>
         ) : (
           cartItems.map(item => (
@@ -45,6 +47,7 @@ export default function CartSidebar({ isOpen, onClose, cartItems, updateQuantity
       </div>
 
       <div className={styles.totalSection}>
+        <p className={styles.tenPercent}>{total>0 ? percentMessage : ""} </p>
         <p className={`${styles.totalPrice} ${language === 'en' ? `${styles.englishFont}` : ""}`}> {language === 'en' ? "Total Price :" : "جمع کل:"}
            {total.toLocaleString()} {language === 'en' ? "T" : "تومان"}
         </p>

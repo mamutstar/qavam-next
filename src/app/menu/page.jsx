@@ -10,6 +10,7 @@ import CartSidebar from "../../components/CartSidebar";
 import { Suspense } from "react";
 import Head from "next/head";
 import { useTransition } from "react";
+import Link from "next/link";
 
 
 
@@ -119,11 +120,13 @@ useEffect(() => {
     </Head>
     <div className={styles.bodyy}>
       {/* هدر */}
+      <Link href='/'>
       <img
         className={styles.qavamHeaderImg}
         src='/assets/images/logo/qavamHeaderPoster2.png'
         alt="Header Poster"
       />
+      </Link>
 
       {/* دسته‌بندی */}
       <Suspense fallback={<div>در حال بارگذاری زبان...</div>}>

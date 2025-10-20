@@ -42,7 +42,24 @@
     
     
     
+    
 }
+.menuCategoryContainerRtl{
+  
+    
+    direction: rtl ;
+
+      button:nth-child(1){
+      margin-right: 72% !important;
+      
+    }
+
+      button:last-child{
+      margin-left: 7px;
+    }
+    
+}
+
 .menuCategoryContainerScrolled{
 background-color: aquamarine !important;
 }
@@ -85,11 +102,24 @@ background-color: aquamarine !important;
     }
     
     .menuCategoryContainer>button:nth-child(1){
-      margin-left: 68%;
+      
       
     }
     .menuCategoryContainer>button:last-child{
+      
+    }
+    .lastchildEn{
       margin-right: 20px;
+    }
+    .firstchildEn{
+      margin-left: 68%;
+    }
+
+    .lastchildFa{
+      margin-left: 7px;
+    }
+    .firstchildFa{
+      margin-right: 72%;
     }
     
     

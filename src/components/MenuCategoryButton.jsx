@@ -56,9 +56,9 @@ export default function MenuCategoryButton({ onSelectCategory, selectedCategory 
     //       </button>
 
     // </div>
-    <div   className={styles.menuCategoryContainer} >
+    <div   className={`${styles.menuCategoryContainer} ${language === "fa" ? styles.menuCategoryContainerRtl : ""}`}   >
       <button  onClick={() => onSelectCategory("persianFood")}
-          className={selectedCategory === "persianFood" ? styles.active : ""}
+          className={`${selectedCategory === "persianFood" ? styles.active : ""} ${language === "fa" ? styles.firstchildFa : styles.firstchildEn}`}
         >
         <img src={selectedCategory === "persianFood" ? "/assets/images/logo/whitePersianFood2.svg" : "/assets/images/logo/meal.svg"} 
         />
@@ -96,7 +96,7 @@ export default function MenuCategoryButton({ onSelectCategory, selectedCategory 
         <p>{desserts}</p>
       </button> */}
       <button onClick={() => onSelectCategory("drink")}
-        className={selectedCategory === "drink" ? styles.active : ""}
+         className={`${selectedCategory === "drink" ? styles.active : ""} ${language === "fa" ? styles.lastchildFa : styles.lastchildEn}`} 
         >
         <img src={selectedCategory === "drink" ? "/assets/images/logo/whiteCola2.svg" : "/assets/images/logo/cola.svg"}
          />

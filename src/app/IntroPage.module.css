@@ -42,29 +42,36 @@
         radial-gradient(at 47% 33%, hsl(228.84, 70%, 24%) 0, transparent 59%), 
         radial-gradient(at 82% 65%, hsl(37.72, 97%, 66%) 0, transparent 55%);
 } */
+
  
  .parentContainer{
-  background-image: url('../../public/assets/images/logo/qavamBackgroun2.jpg');
+  
+  /* background-image: url('../../public/assets/images/logo/ghavamGrayScaleBackground.png'); */
+  background-color: #ffffff;
   background-repeat: no-repeat;
   background-size: cover;
+
   
-  height: 100vh ;
+  
+  height: 100dvh ;
+  max-height: 100vh;
   
   
   padding-top: 30px;
  }
+ 
 .topNavBar{
   
 
    
-    
+    /* border-bottom: 1px solid #122268; */
   max-width: 80vw;
+  
   margin: 0 auto;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  
   text-decoration: none;
   font-family: 'YekanBakhRegular';
-  color: white;
+  color: #122268;
   list-style: none;
   display: flex;
   padding: 0;
@@ -78,16 +85,18 @@
   flex-direction: column;
   margin: 0 auto;
   
+  
+  
     width: 80vw;
     max-width: 400px;
-    height: 80vh;
+    height: 70vh;
     
-     backdrop-filter: blur(11px) saturate(200%);
+     backdrop-filter: blur(12px) saturate(200%);
     -webkit-backdrop-filter: blur(19px) saturate(180%);
     /* background-color: rgba(17, 25, 40, 0.42); */
-    background-color: #1222686e;
+     background-color: white;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
+    border: 1px solid #122268;
 }
 .qavamLogoContainer{
     display: flex;
@@ -148,14 +157,15 @@
   
    backdrop-filter: blur(-12px) saturate(180%);
     -webkit-backdrop-filter: blur(-12px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
+    background-color: #122268;
+    border-radius: 15px;
     border: 1px solid rgba(209, 213, 219, 0.3);
 
     p{
       
       
       font-family: 'YekanBakhThin';
+      font-weight: 600;
       font-size: 14px;
       color: aliceblue;
     }
@@ -267,7 +277,7 @@
   h4{
     margin: 0;
     font-family: "YekanBakhThin";
-    color: rgba(255, 255, 255, 0.573);
+    color: #fcbe55;
     letter-spacing: 4px;
   }
 }
@@ -275,7 +285,7 @@
   margin-bottom: 15px;
   display: flex;
   gap: 18px;
-  border: 0.4px solid rgba(255, 255, 255, 0.526);
+  
   border-radius: 25px;
   padding: 4px 22px 4px 22px;
   align-items: center;
@@ -288,7 +298,7 @@
   
   img{
     width: 25px;
-    opacity: 40%;
+    
 
   }
 }

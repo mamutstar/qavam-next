@@ -23,7 +23,7 @@ const MapLink = ({ lat = 28.98669639134926, lng = 50.82755359796483}) => {
       onClick={openMap}
       
     >
-      <img src='/assets/images/logo/whiteLocationIcon.svg'></img>
+      <img src='/assets/images/logo/blueLocationIcon.svg'></img>
     </a>
   );
 };

@@ -16,19 +16,22 @@ export default function IntroPage() {
   
   return (
     <div className={styles.parentContainer}>
-      
+     <ul className={styles.topNavBar}>
+        
+        
+        <li><Link href="#followUs">ارتباط با ما</Link></li>
+        <li><Link href="#">درباره ما</Link></li>
+        <li><Link href="/menu?lang=fa">منو</Link></li>
+        <li> <Link href="/">خانه</Link></li>
+
+      </ul>
     <div className={styles.introGlassCard}>
       
-      <ul className={styles.topNavBar}>
-        <li> <Link href="/">خانه</Link></li>
-        <li><Link href="#">درباره ما</Link></li>
-        <li><Link href="#followUs">ارتباط با ما</Link></li>
-        <li><Link href="/menu?lang=fa">منو</Link></li>
-      </ul>
+     
       <div className={styles.qavamLogoContainer}>
-        <img className={styles.qavamLogo} src='/assets/images/logo/whiteLogo.svg'/>
-        <img className={styles.qavamLogo} src='/assets/images/logo/whitePersianLogoType.svg'/>
-        <img className={styles.qavamLogo} src='/assets/images/logo/whiteEnglishLogoType.svg'/>
+        <img className={styles.qavamLogo} src='/assets/images/logo/blueLogo.svg'/>
+        <img className={styles.qavamLogo} src='/assets/images/logo/bluePersianLogo.svg'/>
+        <img className={styles.qavamLogo} src='/assets/images/logo/blueEnglishLogo.svg'/>
         
 
       </div>
@@ -70,17 +73,17 @@ export default function IntroPage() {
 
       <p className={styles.qavamMessage}>مزه اصالت، در قلب سنت</p>
       
-      <div className={styles.folowUsCotainer}>
+     
+    </div>
+     <div className={styles.folowUsCotainer}>
         <h4>FOLLOW US</h4>
         <div className={styles.followUsIconContainer} id='followUS'>
           
-          <a href="https://wa.me/989174000034" target="_blank"><img src='/assets/images/logo/whiteWhatsAppIcon.svg'></img></a>
+          <a href="https://wa.me/989174000034" target="_blank"><img src='/assets/images/logo/blueWhatsAppIcon.svg'></img></a>
           <MapLink> </MapLink>
-          <a href='https://www.instagram.com/restaurant_ghavam?igsh=MWVqd3M1Mnd2emRwZA=='><img src='/assets/images/logo/whiteInstagramThinIcon.svg'></img></a>
+          <a href='https://www.instagram.com/restaurant_ghavam?igsh=MWVqd3M1Mnd2emRwZA=='><img src='/assets/images/logo/blueInstagramThinIcon.svg'></img></a>
         </div>
       </div>
-    </div>
-    
     </div>
     
   )

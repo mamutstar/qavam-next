@@ -177,13 +177,17 @@
   height: auto;
   
   img{
-    width: 200px;
+    width: 100px;
   }
   p{
     font-family: "YekanBakhBold";
     font-size: 18px;
-    color: rgba(0, 0, 0, 0.456);
+    color: #fcbe55
   }
+}
+.tenPercent{
+  font-family: "YekanBakhThin";
+  font-size: 12px;
 }
 }
 
