@@ -16,17 +16,18 @@ export default function IntroPage() {
   
   return (
     <div className={styles.parentContainer}>
-     <ul className={styles.topNavBar}>
+     {/* <div className={styles.backLine}></div> */}
+     {/* <img className={styles.imageBackLine} src='/assets/images/logo/vecteezy_abstract-beach-background-with-paper-cut-shapes-wave-vector_9095897.jpg'></img> */}
+    <div className={styles.introGlassCard}>
+      <ul className={styles.topNavBar}>
         
         
         <li><Link href="#followUs">ارتباط با ما</Link></li>
         <li><Link href="#">درباره ما</Link></li>
         <li><Link href="/menu?lang=fa">منو</Link></li>
-        <li> <Link href="/">خانه</Link></li>
+        {/* <li> <Link href="/">خانه</Link></li> */}
 
       </ul>
-    <div className={styles.introGlassCard}>
-      
      
       <div className={styles.qavamLogoContainer}>
         <img className={styles.qavamLogo} src='/assets/images/logo/blueLogo.svg'/>
@@ -38,13 +39,13 @@ export default function IntroPage() {
 
       <div className={styles.goToMenuContainer}>
         <div className={styles.goToPersianMenu}>
-          <img className={styles.languageIcon} src='/assets/iran.svg'/>
+          <img className={styles.languageIcon} src='/assets/images/logo/iranFlagRoundIcon.png'/>
           <Link href="/menu?lang=fa">
           <p>رفتن به منــــــــــو</p>
           </Link>
         </div>
         <div className={styles.goToEnglishMenu}>
-          <img className={styles.languageIcon} src='/assets/england.svg'/>
+          <img className={styles.languageIcon} src='/assets/images/logo/englandFlagRoundIcon.png'/>
           <Link href="/menu?lang=en">
           <p>go to the menu</p>
           </Link>
@@ -71,10 +72,8 @@ export default function IntroPage() {
       {/* <h2 className={styles.qavamMessage}>طعمی به اصالت <br></br>دریا</h2> */}
       {/* <img className={styles.qavamMessage} src='/assets/images/logo/whiteLineVector.png'></img> */}
 
-      <p className={styles.qavamMessage}>مزه اصالت، در قلب سنت</p>
+      <p className={styles.qavamMessage}>مزه اصالت ، در قلب سنت</p>
       
-     
-    </div>
      <div className={styles.folowUsCotainer}>
         <h4>FOLLOW US</h4>
         <div className={styles.followUsIconContainer} id='followUS'>
@@ -84,6 +83,8 @@ export default function IntroPage() {
           <a href='https://www.instagram.com/restaurant_ghavam?igsh=MWVqd3M1Mnd2emRwZA=='><img src='/assets/images/logo/blueInstagramThinIcon.svg'></img></a>
         </div>
       </div>
+    </div>
+     
     </div>
     
   )

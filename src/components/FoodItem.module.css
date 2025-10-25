@@ -2,6 +2,7 @@
   font-family: 'YekanBakhThin';
   src: url('../../public/assets/fonts/200-YekanBakh-Thin.woff');
   font-weight: 200;
+  font-display: swap;
   
   
 }
@@ -9,6 +10,7 @@
   font-family: 'YekanBakhRegular';
   src: url('../../public/assets/fonts/400-YekanBakh-Regular.woff');
   font-weight: 200;
+  font-display: swap;
   
   
 }
@@ -16,6 +18,7 @@
   font-family: 'YekanBakhBold';
   src: url('../../public/assets/fonts/600-YekanBakh-Bold.woff');
   font-weight: 200;
+  font-display: swap;
   
   
 }
@@ -24,6 +27,7 @@
   src: url('../../public/assets/fonts/Chopin-Light.ttf');
   font-weight: 200;
   
+  font-display: swap;
   
 }
 

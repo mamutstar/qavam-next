@@ -1,0 +1,6 @@
+# robots.txt برای کنترل ایندکس شدن توسط موتورهای جستجو
+User-agent: *
+Allow: /
+
+# مسیر نقشه سایت
+Sitemap: https://yourdomain.com/sitemap.xml
