@@ -160,12 +160,14 @@ useEffect(() => {
       )}
         </div>
       {/* دکمه پایین صفحه */}
+      <Suspense fallback={<div>در حال بارگذاری...</div>}>
       <NoteBook
         itemCount={cart.reduce((sum, i) => sum + i.quantity, 0)}
         
         
         onToggleCart={() => setIsCartOpen(!isCartOpen)}
       />
+      </Suspense>
       
        
       {/* مودال غذا */}
