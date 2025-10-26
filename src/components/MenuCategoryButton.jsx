@@ -57,8 +57,9 @@ export default function MenuCategoryButton({ onSelectCategory, selectedCategory 
 
     // </div>
     <div   className={`${styles.menuCategoryContainer} ${language === "fa" ? styles.menuCategoryContainerRtl : ""}`}   >
-      <button  onClick={() => onSelectCategory("persianFood")}
+      <button  
           className={`${selectedCategory === "persianFood" ? styles.active : ""} ${language === "fa" ? styles.firstchildFa : styles.firstchildEn}`}
+        onClick={() => onSelectCategory("persianFood")}
         >
         <img src={selectedCategory === "persianFood" ? "/assets/images/logo/whitePersianFood2.svg" : "/assets/images/logo/meal.svg"} 
         />
@@ -72,8 +73,9 @@ export default function MenuCategoryButton({ onSelectCategory, selectedCategory 
         />
         <p>{seaFood}</p>
       </button>
-      <button onClick={() => onSelectCategory("fastFood")}
+      <button 
       className={selectedCategory === "fastFood" ? styles.active : ""}
+      onClick={() => onSelectCategory("fastFood")}
       
         >
         <img src={selectedCategory === "fastFood" ? "/assets/images/logo/whiteHamburger4.svg" : "/assets/images/logo/hamburger.svg"}

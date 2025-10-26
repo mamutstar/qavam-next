@@ -130,7 +130,7 @@ useEffect(() => {
 
       {/* دسته‌بندی */}
       <Suspense fallback={<div>در حال بارگذاری زبان...</div>}>
-      <MenuCategoryButtons onSelectCategory={handleSelectCategory} selectedCategory={selectedCategory} />
+      <MenuCategoryButtons selectedCategory={selectedCategory} onSelectCategory={handleSelectCategory}  />
       {isPending && <p>در حال بارگذاری غذاها...</p>}
       </Suspense>
       
