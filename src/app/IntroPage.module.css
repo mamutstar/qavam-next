@@ -339,7 +339,7 @@ background: linear-gradient(166deg,rgba(18, 34, 104, 0.685) 47%, rgba(255, 255, 
   margin: 0 auto;
   margin-top: 10px;
   font-family: "Manelli";
-  font-weight: 400;
+  font-weight: 600;
   color: #fcbe55;
   text-align: center;
   width: 21ch; /* طول متن (به تعداد کاراکتر) */
@@ -396,11 +396,49 @@ background: linear-gradient(166deg,rgba(18, 34, 104, 0.685) 47%, rgba(255, 255, 
 }
 }
 @media (min-width: 768px) and (max-width: 2400px) {
+  .parentContainer{
+  position: relative;
+  
+  /* background-image: url('../../public/assets/images/logo/ghavamGrayScaleBackground.png'); */
+  background: #ffffff;
+/* background: linear-gradient(134deg,rgba(166, 166, 166, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(166, 166, 166, 1) 100%); */
+  /* background: #FFFFFF;
+background: linear-gradient(166deg,rgba(255, 255, 255, 1) 47%, rgba(18, 34, 104, 1) 100%); */
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
+  height: 100dvh ;
+  max-height: 100vh;
+
+  
+  
+
+  
+  
+  
+ }
+ @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+
+ 
+ @property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
 
   .topNavBar{
   text-decoration: none;
   font-family: 'YekanBakhRegular';
-  color: white;
+  color: #122268;
   list-style: none;
   display: flex;
   padding: 0;
@@ -413,23 +451,85 @@ background: linear-gradient(166deg,rgba(18, 34, 104, 0.685) 47%, rgba(255, 255, 
 .introGlassCard{
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  
+  
+  
+  
     width: 80vw;
-    max-width: 1000px;
-    height: auto;
-     backdrop-filter: blur(19px) saturate(200%);
-    -webkit-backdrop-filter: blur(19px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.42);
+    max-width: 400px;
+    height: 85vh;
+    
+     /* backdrop-filter: blur(12px) saturate(200%);
+    -webkit-backdrop-filter: blur(19px) saturate(180%); */
+    /* background-color: rgba(17, 25, 40, 0.42); */
+     /* background-color: white;
+    border-radius: 12px; */
+    /* border: 1px solid #122268; */
+    background-color: #ffffff71;
+     backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    /* background: #122268;
+background: linear-gradient(166deg,rgba(18, 34, 104, 0.685) 47%, rgba(255, 255, 255, 0.685) 100%); */
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
+    border: 1px solid #122268a9;
+
+    /* box-shadow: 10px 3px 38px -12px rgb(230, 229, 229);
+-webkit-box-shadow: 10px 3px 38px -12px #fcbe55;
+-moz-box-shadow: 10px 3px 38px -12px rgba(0,0,0,0.75); */
+--border-angle: 0turn;
+  --main-bg: conic-gradient(
+    from var(--border-angle),
+    #ffffff,
+    #ffffff 5%,
+    #ffffff 60%,
+    #ffffff 95%
+  );
+
+  border: solid 1px transparent;
+  border-radius: 12px;
+  --gradient-border: conic-gradient(
+    from var(--border-angle),
+    transparent 25%,
+    #122268,
+    #122268 99%,
+    transparent
+  );
+
+  background: 
+    
+    var(--main-bg) padding-box,
+    
+    var(--gradient-border) border-box,
+    
+    var(--main-bg) border-box;
+
+  background-position : center center;
+
+  animation: bg-spin 4s linear infinite;
 }
 .qavamLogoContainer{
-    display: flex;
+     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 8px;
     padding-top: 10%;
+}
+.qavamLogo{
+    width: 50%;
+    opacity: 0; /* اول نامرئی باشه */
+  transform: translateY(-100px); /* از بالا بیاد */
+  animation: dropIn 1s ease-out forwards;
+}
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .qavamLogo{
     width: 20%;
@@ -463,13 +563,13 @@ background: linear-gradient(166deg,rgba(18, 34, 104, 0.685) 47%, rgba(255, 255, 
   justify-content: center;
   align-items: center;
   gap: 10px;
-  width: 234px;
-    height: 46px;
+  width: 200px;
+    height: 35px;
   overflow: hidden;
   
    backdrop-filter: blur(-12px) saturate(180%);
     -webkit-backdrop-filter: blur(-12px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: #122268;
     border-radius: 20px;
     border: 1px solid rgba(209, 213, 219, 0.3);
 
@@ -484,7 +584,7 @@ background: linear-gradient(166deg,rgba(18, 34, 104, 0.685) 47%, rgba(255, 255, 
       margin-left: -60px;
       aspect-ratio: 1 / 1;   /* نسبت ۱ به ۱ */
       object-fit: cover;
-      width: 60px;
+      width: 40px;
       border-radius: 600px;
     }
     
@@ -548,7 +648,7 @@ background: linear-gradient(166deg,rgba(18, 34, 104, 0.685) 47%, rgba(255, 255, 
 }
 
 .qavamMessage{
-  opacity: 60%;
+  opacity: 100%;
 }
 .folowUsCotainer{
   margin-top: auto;
@@ -560,7 +660,7 @@ background: linear-gradient(166deg,rgba(18, 34, 104, 0.685) 47%, rgba(255, 255, 
   h4{
     margin: 0;
     font-family: "YekanBakhThin";
-    color: rgba(255, 255, 255, 0.573);
+    color: #fcbe55;
     letter-spacing: 4px;
   }
 }
@@ -572,6 +672,8 @@ background: linear-gradient(166deg,rgba(18, 34, 104, 0.685) 47%, rgba(255, 255, 
   border-radius: 25px;
   padding: 4px 22px 4px 22px;
   align-items: center;
+  
+  
 
   /* backdrop-filter: blur(-12px) saturate(180%);
     -webkit-backdrop-filter: blur(-12px) saturate(180%);
