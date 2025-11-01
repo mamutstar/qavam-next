@@ -12,4 +12,5 @@ export const db = mysql.createPool({
   password: "9176298900@Qavam",        // پسورد MySQL
   database: "qvqmnext" // اسم دیتابیس
   
+  
 });

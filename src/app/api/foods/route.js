@@ -1,3 +1,4 @@
+import fs from "fs";
 import { NextResponse } from "next/server";
 import { writeFile } from "fs/promises";
 import path from "path";
@@ -28,16 +29,41 @@ export async function POST(req) {
   }
 
   // ذخیره فایل در public/uploads
-  const buffer = Buffer.from(await image.arrayBuffer());
+//   const buffer = Buffer.from(await image.arrayBuffer());
+//   const filename = Date.now() + "-" + image.name;
+//   const filepath = path.join(process.cwd(), "public/uploads", filename);
+//   await writeFile(filepath, buffer);
+
+//   // ذخیره مسیر فایل در دیتابیس
+//   const imagePath = "/uploads/" + filename;
+//   await db.query(
+//     "INSERT INTO foodinformationen (name, en_name, price, description, en_description,category, image) VALUES (?, ?, ?, ?,?,?,?)",
+//     [name,en_name, price, description,en_description,category, imagePath]
+//   );
+
+//   return NextResponse.json({ message: "Food added" }, { status: 201 });
+// }
+const bytes = await image.arrayBuffer();
+  const buffer = Buffer.from(bytes);
+
+  const uploadDir = path.join(process.cwd(), "public", "uploads");
+
+  // ✅ اگر پوشه وجود ندارد، بسازش
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+  }
+
   const filename = Date.now() + "-" + image.name;
-  const filepath = path.join(process.cwd(), "public/uploads", filename);
+  const filepath = path.join(uploadDir, filename);
+
+  // ✅ فایل را بنویس
   await writeFile(filepath, buffer);
 
-  // ذخیره مسیر فایل در دیتابیس
-  const imagePath = "/uploads/" + filename;
+  const imagePath = `/uploads/${filename}`;
+
   await db.query(
-    "INSERT INTO foodinformationen (name, en_name, price, description, en_description,category, image) VALUES (?, ?, ?, ?,?,?,?)",
-    [name,en_name, price, description,en_description,category, imagePath]
+    "INSERT INTO foodinformationen (name, en_name, price, description, en_description, category, image) VALUES (?, ?, ?, ?, ?, ?, ?)",
+    [name, en_name, price, description, en_description, category, imagePath]
   );
 
   return NextResponse.json({ message: "Food added" }, { status: 201 });
