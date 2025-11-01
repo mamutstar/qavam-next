@@ -46,7 +46,7 @@ export async function POST(req) {
 const bytes = await image.arrayBuffer();
   const buffer = Buffer.from(bytes);
 
-  const uploadDir = path.join(process.cwd(), "public", "uploads");
+  const uploadDir = path.join(process.cwd(), "uploads");
 
   // ✅ اگر پوشه وجود ندارد، بسازش
   if (!fs.existsSync(uploadDir)) {
