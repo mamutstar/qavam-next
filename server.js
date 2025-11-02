@@ -29,8 +29,7 @@ app.prepare().then(() => {
 
   // سرو کردن فایل‌های uploads
   server.use('/uploads', express.static(uploadDir));
-  server.use(express.json({ limit: "20mb" }));
-server.use(express.urlencoded({ limit: "20mb", extended: true }));
+ 
 
   // نمونه API برای آپلود
   server.post('/api/upload', upload.single('file'), (req, res) => {
