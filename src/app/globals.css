@@ -10,6 +10,9 @@
         radial-gradient(at 82% 65%, hsl(37.72, 97%, 66%) 0, transparent 55%);
         
 }
+nextjs-portal {
+  display: none;
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;
