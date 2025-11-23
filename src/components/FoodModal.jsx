@@ -20,7 +20,9 @@ export default function FoodModal({ food, onClose , onAddToCart}) {
   // }, [searchParams]);
   const displayName = language === 'fa' ? food.name : food.en_name;
   const displayDescription = language === 'fa' ? food.description : food.en_description;
-  const addOrder = language === 'fa' ? "افزودن" : "Add To Order";
+  const addOrder = food.is_available
+    ? (language === "fa" ? "افزودن" : "Add to Order")
+    : (language === "fa" ? "ناموجود" : "Unavailable");
 
   return (
     <div className={styles.overlay} onClick={onClose}>
@@ -31,11 +33,18 @@ export default function FoodModal({ food, onClose , onAddToCart}) {
         <p className={`${styles.price} ${language === 'en' ? `${styles.englishPrice}` : ""}`}>{Number(food.price).toLocaleString('en-US')}T</p>
         <button className={styles.closeBtn} onClick={onClose}><img src='/assets/images/logo/close.svg'/></button>
         <button
-         className={styles.addButton}
-         onClick={() => {
-            onAddToCart(food);   // آیتم به سبد خرید اضافه میشه
-                       // بعدش مودال بسته میشه (اختیاری)
-          }}
+          disabled={!food.is_available}     // ← غیر فعال کردن دکمه
+            className={
+              food.is_available
+                ? styles.addButton             // رنگ عادی
+                : styles.unavailableButton     // رنگ دکمه ناموجود
+            }
+            onClick={(e) => {
+              e.stopPropagation();
+              if (food.is_available) {
+                onAddToCart(food);
+              }
+            }}
          >{addOrder}</button>
       </div>
       

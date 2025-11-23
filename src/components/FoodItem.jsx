@@ -45,7 +45,10 @@ FoodItem ({ food, onClick , onAddToCart , isFixed}) {
     
   const displayName = language === 'fa' ? food.name : food.en_name;
   const displayDescription = language === 'fa' ? food.description : food.en_description;
-  const addOrder = language === 'fa' ? "افزودن" : "Add To Order";
+  const addOrder = food.is_available
+    ? (language === "fa" ? "افزودن" : "Add to Order")
+    : (language === "fa" ? "ناموجود" : "Unavailable");
+
     const handleClick = () => {
     setSelectedFood(food);  // وقتی روی غذا کلیک می‌کنیم، اطلاعات غذا رو می‌گذاریم در State
   };
@@ -65,9 +68,18 @@ FoodItem ({ food, onClick , onAddToCart , isFixed}) {
                           content={food.price}>{Number(food.price).toLocaleString('en-US')}</span>
                         <span  content="TOOMAN">T</span>
                     </p>
-                    <button onClick={(e) => { 
-              e.stopPropagation(); // جلوگیری از باز شدن مودال
-              onAddToCart(food); 
+                    <button 
+                    disabled={!food.is_available}     // ← غیر فعال کردن دکمه
+                    className={
+                      food.is_available
+                      ? ""             // رنگ عادی
+                      : styles.unavailableButton     // رنگ دکمه ناموجود
+                             }
+            onClick={(e) => {
+              e.stopPropagation();
+              if (food.is_available) {
+                onAddToCart(food);
+              }
             }}>{addOrder}</button>
                 </div>
             </div>

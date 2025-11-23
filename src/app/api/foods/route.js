@@ -68,3 +68,19 @@ const bytes = await image.arrayBuffer();
 
   return NextResponse.json({ message: "Food added" }, { status: 201 });
 }
+
+// تغییر وضعیت موجودی غذا
+export async function PATCH(req) {
+  const { id, is_available } = await req.json();
+
+  if (!id) {
+    return NextResponse.json({ error: "ID is required" }, { status: 400 });
+  }
+
+  await db.query(
+    "UPDATE foodinformationen SET is_available = ? WHERE id = ?",
+    [is_available, id]
+  );
+
+  return NextResponse.json({ success: true });
+}

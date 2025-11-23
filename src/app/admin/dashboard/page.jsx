@@ -218,13 +218,15 @@ export default function AdminDashboard() {
                   highlightedId === food.id ? styles.highlight : ""
                 }`}
               >
+              
+
                 {/* تصویر */}
                 <img
                   src={food.previewImage || food.image}
                   alt={food.name}
                   width="50"
                 />
-
+                
                 {/* نام فارسی */}
                 <input
                   type="text"
@@ -373,6 +375,40 @@ export default function AdminDashboard() {
                   >
                     💾 ذخیره تغییرات
                   </button>
+                  {/* وضعیت موجود / ناموجود */}
+<div
+  className={`${styles.toggleSwitch} ${
+    food.is_available ? styles.available : ""
+  }`}
+  onClick={() => {
+    const newValue = !food.is_available;
+
+    // بروز رسانی آنی در فرانت
+    setFoods((prev) =>
+      prev.map((f) =>
+        f.id === food.id ? { ...f, is_available: newValue } : f
+      )
+    );
+
+    // ارسال به سرور
+  fetch("/api/foods", {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id: food.id, is_available: newValue }),
+  })
+    .then(async (res) => {
+      if (!res.ok) {
+        const err = await res.json();
+        alert("خطا در بروزرسانی ❌\n" + err.error);
+      }
+    })
+    .catch(() => {
+      alert("اتصال به سرور برقرار نیست ❌");
+    });
+  }}
+>
+  <div className={styles.toggleCircle}></div>
+</div>
                 </div>
               </div>
             </li>
